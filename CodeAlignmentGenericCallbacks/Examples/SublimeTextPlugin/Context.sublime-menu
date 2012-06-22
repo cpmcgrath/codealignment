@@ -1,0 +1,12 @@
+[
+  { "caption": "-"                                                                        },
+  { "command": "align_by", "args": { "by": "dialog"       }, "caption":"Align by..."      }, 
+  { "command": "align_by", "args": { "by": "equals"       }, "caption":"Align by ="       }, 
+  { "command": "align_by", "args": { "by": "equalsequals" }, "caption":"Align by =="      }, 
+  { "command": "align_by", "args": { "by": "m"            }, "caption":"Align by m_"      }, 
+  { "command": "align_by", "args": { "by": "quote"        }, "caption":"Align by \""      }, 
+  { "command": "align_by", "args": { "by": "period"       }, "caption":"Align by ."       }, 
+  { "command": "align_by", "args": { "by": "space"        }, "caption":"Align by space"   },
+  { "command": "align_by", "args": { "by": "caret"        }, "caption":"Align from caret" },
+  { "command": "align_by", "args": { "by": "key"          }, "caption":"Align by key"     }
+]

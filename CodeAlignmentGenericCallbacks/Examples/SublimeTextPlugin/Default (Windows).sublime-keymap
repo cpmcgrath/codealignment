@@ -1,0 +1,16 @@
+[
+  {
+    "command": "align_by",
+    "args": { "by": "dialog" },
+    "keys": [
+      "ctrl+shift+="
+    ]
+  }, 
+  {
+    "command": "align_by",
+    "args": { "by": "key" },
+    "keys": [
+      "ctrl+="
+    ]
+  }
+]

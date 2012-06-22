@@ -1,0 +1,60 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CMcG.CodeAlignment.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Delimiters" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UseRegex" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Shortcuts" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfKeyShortcut xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;KeyShortcut&gt;
+    &lt;Value&gt;EqualsPlus&lt;/Value&gt;
+    &lt;Alignment&gt;(^|[\w\s])(?&amp;lt;x&amp;gt;=)&lt;/Alignment&gt;
+    &lt;AlignFromCaret&gt;false&lt;/AlignFromCaret&gt;
+    &lt;UseRegex&gt;true&lt;/UseRegex&gt;
+    &lt;AddSpace&gt;true&lt;/AddSpace&gt;
+  &lt;/KeyShortcut&gt;
+  &lt;KeyShortcut&gt;
+    &lt;Value&gt;M&lt;/Value&gt;
+    &lt;Alignment&gt;m_&lt;/Alignment&gt;
+    &lt;AlignFromCaret&gt;false&lt;/AlignFromCaret&gt;
+    &lt;UseRegex&gt;false&lt;/UseRegex&gt;
+  &lt;/KeyShortcut&gt;
+  &lt;KeyShortcut&gt;
+    &lt;Value&gt;Quotes&lt;/Value&gt;
+    &lt;Alignment&gt;"&lt;/Alignment&gt;
+    &lt;AlignFromCaret&gt;false&lt;/AlignFromCaret&gt;
+    &lt;UseRegex&gt;false&lt;/UseRegex&gt;
+  &lt;/KeyShortcut&gt;
+  &lt;KeyShortcut&gt;
+    &lt;Value&gt;Period&lt;/Value&gt;
+    &lt;Alignment&gt;.&lt;/Alignment&gt;
+    &lt;AlignFromCaret&gt;true&lt;/AlignFromCaret&gt;
+    &lt;UseRegex&gt;false&lt;/UseRegex&gt;
+  &lt;/KeyShortcut&gt;
+  &lt;KeyShortcut&gt;
+    &lt;Value&gt;Space&lt;/Value&gt;
+    &lt;Alignment&gt;\s+(?&amp;lt;x&amp;gt;[^\s])&lt;/Alignment&gt;
+    &lt;AlignFromCaret&gt;true&lt;/AlignFromCaret&gt;
+    &lt;UseRegex&gt;true&lt;/UseRegex&gt;
+  &lt;/KeyShortcut&gt;
+&lt;/ArrayOfKeyShortcut&gt;</Value>
+    </Setting>
+    <Setting Name="XmlTypes" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;.xaml&lt;/string&gt;
+  &lt;string&gt;.xml&lt;/string&gt;
+  &lt;string&gt;.html&lt;/string&gt;
+  &lt;string&gt;.xhtml&lt;/string&gt;
+  &lt;string&gt;.aspx&lt;/string&gt;
+  &lt;string&gt;.master&lt;/string&gt;
+  &lt;string&gt;.cshtml&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

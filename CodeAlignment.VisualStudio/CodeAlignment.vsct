@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <Extern href="stdidcmd.h"/>
+    <Extern href="vsshlids.h"/>
+    <Extern href="msobtnid.h"/>
+
+    <Commands package="guidCodeAlignmentPkg">
+        <Groups>
+            <Group guid="guidCodeAlignmentCmdSet" id="AlignmentGroup" priority="0x0600">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignToolbar"/>
+            </Group>
+            <Group guid="guidCodeAlignmentCmdSet" id="MenuStub" priority="0x0600">
+                <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_EDIT"/>
+            </Group>
+            <Group guid="guidCodeAlignmentCmdSet" id="AlignmentGroup" priority="0x0600">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignmentMenu"/>
+            </Group>
+            <Group guid="guidCodeAlignmentCmdSet" id="AlignmentExtendedGroup" priority="0x0600">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignmentMenu"/>
+            </Group>
+        </Groups>
+
+        <Menus>
+            <Menu guid="guidCodeAlignmentCmdSet" id="AlignmentMenu" priority="0x0600">
+                <Parent guid="guidCodeAlignmentCmdSet" id="MenuStub"/>
+                <Strings>
+                    <ButtonText>Code alignment</ButtonText>
+                </Strings>
+            </Menu>
+            <Menu guid="guidCodeAlignmentCmdSet" id="AlignToolbar" type="Toolbar" priority="0x0100">
+                <Strings>
+                    <CommandName>Code alignment</CommandName>
+                    <ButtonText>Code alignment</ButtonText>
+                    <MenuText>Code alignment</MenuText>
+                    <ToolTipText>Code alignment</ToolTipText>
+                </Strings>
+            </Menu>
+        </Menus>
+        
+        <Buttons>
+            <Button guid="guidCodeAlignmentCmdSet" id="AlignBy" priority="0x0100" type="Button">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignmentGroup" />
+                <Strings>
+                    <CommandName>AlignByString</CommandName>
+                    <LocCanonicalName>AlignByString</LocCanonicalName>
+                    <ButtonText>Align by...</ButtonText>
+                    <ToolTipText>Align by string</ToolTipText>
+                </Strings>
+            </Button>
+
+            <Button guid="guidCodeAlignmentCmdSet" id="AlignByPosition" priority="0x0100" type="Button">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignmentGroup" />
+                <Icon guid="guidImages" id="bmpPosition" />
+                <Strings>
+                    <CommandName>AlignByPosition</CommandName>
+                    <LocCanonicalName>AlignByPosition</LocCanonicalName>
+                    <ButtonText>Align from caret</ButtonText>
+                    <ToolTipText>Align from caret</ToolTipText>
+                </Strings>
+            </Button>
+
+            <Button guid="guidCodeAlignmentCmdSet" id="AlignByEquals" priority="0x0200" type="Button">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignmentGroup" />
+                <Icon guid="guidImages" id="bmpEquals" />
+                <Strings>
+                    <CommandName>AlignByEquals</CommandName>
+                    <CanonicalName>.Edit.AlignByEquals</CanonicalName>
+                    <LocCanonicalName>.Edit.AlignByEquals</LocCanonicalName>
+                    <ButtonText>Align by equals</ButtonText>
+                </Strings>
+            </Button>
+
+            <Button guid="guidCodeAlignmentCmdSet" id="AlignByEqualsEquals" priority="0x0200" type="Button">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignmentGroup" />
+                <Icon guid="guidImages" id="bmpEqualsEquals" />
+                <Strings>
+                    <CommandName>AlignByEqualsEquals</CommandName>
+                    <LocCanonicalName>AlignByEqualsEquals</LocCanonicalName>
+                    <ButtonText>Align by equals equals</ButtonText>
+                </Strings>
+            </Button>
+
+            <Button guid="guidCodeAlignmentCmdSet" id="AlignByMUnderscore" priority="0x0200" type="Button">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignmentGroup" />
+                <Icon guid="guidImages" id="bmpMUnder" />
+                <Strings>
+                    <CommandName>AlignByMUnderscore</CommandName>
+                    <LocCanonicalName>AlignByMUnderscore</LocCanonicalName>
+                    <ButtonText>Align by m_</ButtonText>
+                </Strings>
+            </Button>
+            <Button guid="guidCodeAlignmentCmdSet" id="AlignByQuote" priority="0x0200" type="Button">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignmentGroup" />
+                <Icon guid="guidImages" id="bmpQuote" />
+                <Strings>
+                    <CommandName>AlignByQuote</CommandName>
+                    <LocCanonicalName>AlignByQuote</LocCanonicalName>
+                    <ButtonText>Align by quote</ButtonText>
+                </Strings>
+            </Button>
+            <Button guid="guidCodeAlignmentCmdSet" id="AlignByPeriod" priority="0x0200" type="Button">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignmentGroup" />
+                <Icon guid="guidImages" id="bmpPeriod" />
+                <Strings>
+                    <CommandName>AlignByPeriod</CommandName>
+                    <LocCanonicalName>AlignByPeriod</LocCanonicalName>
+                    <ButtonText>Align by period</ButtonText>
+                </Strings>
+            </Button>
+            <Button guid="guidCodeAlignmentCmdSet" id="AlignBySpace" priority="0x0200" type="Button">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignmentGroup" />
+                <Icon guid="guidImages" id="bmpSpace" />
+                <Strings>
+                    <CommandName>AlignBySpace</CommandName>
+                    <LocCanonicalName>AlignBySpace</LocCanonicalName>
+                    <ButtonText>Align by space</ButtonText>
+                </Strings>
+            </Button>
+            <Button guid="guidCodeAlignmentCmdSet" id="AlignByKey" priority="0x0300" type="Button">
+                <Parent guid="guidCodeAlignmentCmdSet" id="AlignmentExtendedGroup" />
+                <Strings>
+                    <CommandName>AlignByKey</CommandName>
+                    <LocCanonicalName>AlignByKey</LocCanonicalName>
+                    <ButtonText>Align by key</ButtonText>
+                </Strings>
+            </Button>
+        </Buttons>
+
+        <Bitmaps>
+            <Bitmap guid="guidImages" href="Resources\Images_32bit.png" usedList="bmpEquals, bmpEqualsEquals, bmpMUnder, bmpQuote, bmpPeriod, bmpSpace, bmpPosition"/>
+        </Bitmaps>
+    </Commands>
+    <VisibilityConstraints>
+        <VisibilityItem guid="guidCodeAlignmentCmdSet" id="AlignToolbar" context="GUID_TextEditorFactory" />
+    </VisibilityConstraints>
+    <KeyBindings>
+        <KeyBinding guid="guidCodeAlignmentCmdSet" id="AlignBy"    key1="0xBB" mod1="Control Shift" editor="guidVSStd97" />
+        <KeyBinding guid="guidCodeAlignmentCmdSet" id="AlignByKey" key1="0xBB" mod1="Control"       editor="guidVSStd97" />
+    </KeyBindings>
+
+    <Symbols>
+        <GuidSymbol name="guidCodeAlignmentPkg" value="{2adcbb11-89c4-451e-97f2-14049154ccad}" />
+
+        <GuidSymbol name="guidCodeAlignmentCmdSet" value="{580373b2-1046-48bc-acda-f2c41c3c2857}">
+            <IDSymbol name="AlignmentGroup"         value="0x1020" />
+            <IDSymbol name="AlignmentExtendedGroup" value="0x1021" />
+            <IDSymbol name="AlignToolbar"           value="0x1030" />
+            <IDSymbol name="AlignmentMenu"          value="0x1040" />
+            <IDSymbol name="MenuStub"               value="0x1050" />
+            <IDSymbol name="AlignBy"                value="0x0100" />
+            <IDSymbol name="AlignByEquals"          value="0x0200" />
+            <IDSymbol name="AlignByEqualsEquals"    value="0x0300" />
+            <IDSymbol name="AlignByMUnderscore"     value="0x0400" />
+            <IDSymbol name="AlignByQuote"           value="0x0500" />
+            <IDSymbol name="AlignByPeriod"          value="0x0600" />
+            <IDSymbol name="AlignBySpace"           value="0x0700" />
+            <IDSymbol name="AlignByPosition"        value="0x0800" />
+            <IDSymbol name="AlignByKey"             value="0x0900" />
+        </GuidSymbol>
+
+        <GuidSymbol name="guidImages" value="{a87d7a21-6958-4996-b253-ef76f55eda03}" >
+            <IDSymbol name="bmpEquals"       value="1" />
+            <IDSymbol name="bmpEqualsEquals" value="2" />
+            <IDSymbol name="bmpMUnder"       value="3" />
+            <IDSymbol name="bmpQuote"        value="4" />
+            <IDSymbol name="bmpPeriod"       value="5" />
+            <IDSymbol name="bmpSpace"        value="6" />
+            <IDSymbol name="bmpPosition"     value="7" />
+        </GuidSymbol>
+    </Symbols>
+</CommandTable>

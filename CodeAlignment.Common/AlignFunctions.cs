@@ -1,0 +1,70 @@
+using System;
+using System.Linq;
+using System.Drawing;
+using CMcG.CodeAlignment.Business;
+
+namespace CMcG.CodeAlignment
+{
+    public class AlignFunctions
+    {
+        Business.Options m_options = new Business.Options();
+
+        public IDocument Document { get; set; }
+        public IntPtr    Handle   { get; set; }
+
+        public void AlignBy(string alignDelimiter, bool alignFromCaret = false, bool useRegex = false, bool addSpace = false)
+        {
+            if (!string.IsNullOrEmpty(alignDelimiter))
+                CreateAlignment(useRegex).PerformAlignment(alignDelimiter, alignFromCaret ? Document.CarretColumn : 0, addSpace);
+        }
+
+        public void AlignBy(Key key, bool forceFromCaret = false)
+        {
+            var shortcut = m_options.GetShortcut(key, Document.FileType);
+            if (shortcut != null)
+                AlignBy(shortcut.Alignment, forceFromCaret || shortcut.AlignFromCaret, shortcut.UseRegex, shortcut.AddSpace);
+        }
+
+        public void AlignByDialog(bool alignFromCaret = false)
+        {
+            var result = ShowAlignDialog(alignFromCaret);
+            if (result != null)
+                AlignBy(result.Delimiter, result.AlignFromCaret, useRegex:result.UseRegex);
+        }
+
+        Alignment CreateAlignment(bool useRegex = false)
+        {
+            var alignment = new Alignment { View = Document };
+
+            if (m_options.XmlTypes.Contains(Document.FileType))
+                alignment.Selector = new XmlScopeSelector();
+
+            if (useRegex)
+                alignment.Finder = new RegexDelimiterFinder();
+
+            return alignment;
+        }
+
+        public FormCodeAlignment ShowAlignDialog(bool alignFromCaret)
+        {
+            var form = new FormCodeAlignment { AlignFromCaret = alignFromCaret };
+            return form.ShowDialog() == System.Windows.Forms.DialogResult.Cancel ? null : form;
+        }
+
+        public void AlignByKey()
+        {
+            using (var form = new FormKeyGrabber())
+            {
+                form.SetLocation(Handle, new Point(10, -40));
+
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                    return;
+
+                if (form.AlignFromPosition)
+                    AlignByDialog(alignFromCaret:true);
+                else
+                    AlignBy(form.Result, form.ForceFromCaret);
+            }
+        }
+    }
+}
