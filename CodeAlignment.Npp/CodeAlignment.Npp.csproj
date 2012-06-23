@@ -126,6 +126,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\CodeAlignmentNppBanner.png" />
     <Content Include="x86CodeAlignmentNpp.csproj.user" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

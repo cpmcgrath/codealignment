@@ -9,15 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		CodeAlignment.ico = CodeAlignment.ico
 		CodeAlignment.snk = CodeAlignment.snk
-		CodeAlignmentBanner384x64.psd = CodeAlignmentBanner384x64.psd
-		CodeAlignmentIcon16.psd = CodeAlignmentIcon16.psd
-		CodeAlignmentIcon64.psd = CodeAlignmentIcon64.psd
-		CodeAlignmentIcons.psd = CodeAlignmentIcons.psd
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignment.Common", "CodeAlignment.Common\CodeAlignment.Common.csproj", "{F33D2D88-A998-4F74-AB41-AB81878BB296}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignmentWebsite", "CodeAlignmentWebsite\CodeAlignmentWebsite.csproj", "{CEB8956D-0C4E-4982-90D9-0ECBC19F1FBA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignmentGenericCallbacks", "CodeAlignmentGenericCallbacks\CodeAlignmentGenericCallbacks.csproj", "{67A65FCD-FE70-4269-9D46-E4711DE513D6}"
 EndProject
@@ -41,10 +35,6 @@ Global
 		{F33D2D88-A998-4F74-AB41-AB81878BB296}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F33D2D88-A998-4F74-AB41-AB81878BB296}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F33D2D88-A998-4F74-AB41-AB81878BB296}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CEB8956D-0C4E-4982-90D9-0ECBC19F1FBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEB8956D-0C4E-4982-90D9-0ECBC19F1FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEB8956D-0C4E-4982-90D9-0ECBC19F1FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEB8956D-0C4E-4982-90D9-0ECBC19F1FBA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{67A65FCD-FE70-4269-9D46-E4711DE513D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{67A65FCD-FE70-4269-9D46-E4711DE513D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67A65FCD-FE70-4269-9D46-E4711DE513D6}.Release|Any CPU.ActiveCfg = Release|Any CPU

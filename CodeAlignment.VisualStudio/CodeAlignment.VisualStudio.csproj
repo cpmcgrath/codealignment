@@ -107,6 +107,7 @@
     </VSCTCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\CodeAlignmentVSBanner.png" />
     <Resource Include="Resources\Images_32bit.png" />
     <Resource Include="..\CodeAlignment.ico">
       <Link>Resources\CodeAlignment.ico</Link>
