@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace CMcG.CodeAlignment.Business
 {
     public class GeneralScopeSelector : IScopeSelector
     {
+        public string ScopeSelectorRegex { get; set; }
+
         public IEnumerable<ILine> GetLinesToAlign(IDocument view)
         {
             int start = view.StartSelectionLineNumber;
@@ -25,9 +28,7 @@ namespace CMcG.CodeAlignment.Business
 
         bool IsLineBlank(IDocument view, int lineNo)
         {
-            var blankStrings = new[] { string.Empty, "{", "}", "};", ")", "(" };
-            var line         = view.GetLineFromLineNumber(lineNo).Text.Trim();
-            return blankStrings.Contains(line);
+            return Regex.IsMatch(view.GetLineFromLineNumber(lineNo).Text, ScopeSelectorRegex);
         }
     }
 }

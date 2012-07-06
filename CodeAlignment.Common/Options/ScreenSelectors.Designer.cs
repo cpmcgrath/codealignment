@@ -33,13 +33,15 @@
             this.txtXmlTypes = new System.Windows.Forms.TextBox();
             this.bindOptions = new System.Windows.Forms.BindingSource(this.components);
             this.btnRestoreDefaults = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindOptions)).BeginInit();
             this.SuspendLayout();
             // 
             // lblXmlTypes
             // 
             this.lblXmlTypes.AutoSize = true;
-            this.lblXmlTypes.Location = new System.Drawing.Point(12, 14);
+            this.lblXmlTypes.Location = new System.Drawing.Point(12, 41);
             this.lblXmlTypes.Name = "lblXmlTypes";
             this.lblXmlTypes.Size = new System.Drawing.Size(65, 15);
             this.lblXmlTypes.TabIndex = 0;
@@ -51,10 +53,10 @@
             this.txtXmlTypes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtXmlTypes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindOptions, "XmlTypesString", true));
-            this.txtXmlTypes.Location = new System.Drawing.Point(15, 33);
+            this.txtXmlTypes.Location = new System.Drawing.Point(15, 59);
             this.txtXmlTypes.Multiline = true;
             this.txtXmlTypes.Name = "txtXmlTypes";
-            this.txtXmlTypes.Size = new System.Drawing.Size(135, 243);
+            this.txtXmlTypes.Size = new System.Drawing.Size(135, 217);
             this.txtXmlTypes.TabIndex = 1;
             // 
             // bindOptions
@@ -73,10 +75,31 @@
             this.btnRestoreDefaults.UseVisualStyleBackColor = true;
             this.btnRestoreDefaults.Click += new System.EventHandler(this.RestoreDefaults);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 15);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "End of Scope Selector";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindOptions, "ScopeSelectorRegex", true));
+            this.textBox1.Location = new System.Drawing.Point(139, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(470, 23);
+            this.textBox1.TabIndex = 11;
+            // 
             // ScreenSelectors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRestoreDefaults);
             this.Controls.Add(this.txtXmlTypes);
             this.Controls.Add(this.lblXmlTypes);
@@ -94,5 +117,7 @@
         private System.Windows.Forms.TextBox txtXmlTypes;
         private System.Windows.Forms.BindingSource bindOptions;
         private System.Windows.Forms.Button btnRestoreDefaults;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

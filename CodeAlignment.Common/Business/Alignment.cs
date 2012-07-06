@@ -13,8 +13,7 @@ namespace CMcG.CodeAlignment.Business
 
         public Alignment()
         {
-            Selector = new GeneralScopeSelector();
-            Finder   = new NormalDelimiterFinder();
+            Finder = new NormalDelimiterFinder();
         }
 
         public void PerformAlignment(string delimiter, int minIndex = 0, bool addSpace = false)

@@ -56,5 +56,8 @@
   &lt;string&gt;.cshtml&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
+    <Setting Name="ScopeSelectorRegex" Type="System.String" Scope="User">
+      <Value Profile="(Default)">^\s*(\{|\}|\};|\(|\)|)\s*$</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

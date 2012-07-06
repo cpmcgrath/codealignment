@@ -38,6 +38,8 @@ namespace CMcG.CodeAlignment
 
             if (m_options.XmlTypes.Contains(Document.FileType))
                 alignment.Selector = new XmlScopeSelector();
+            else
+                alignment.Selector = new GeneralScopeSelector { ScopeSelectorRegex = m_options.ScopeSelectorRegex };
 
             if (useRegex)
                 alignment.Finder = new RegexDelimiterFinder();

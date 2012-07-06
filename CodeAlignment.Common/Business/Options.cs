@@ -12,12 +12,14 @@ namespace CMcG.CodeAlignment.Business
         Settings m_settings = Settings.Default;
         public Options()
         {
-            Shortcuts = KeyShortcut.Get(m_settings.Shortcuts).ToList();
-            XmlTypes  = m_settings.XmlTypes.Cast<string>().ToArray();
+            Shortcuts          = KeyShortcut.Get(m_settings.Shortcuts).ToList();
+            XmlTypes           = m_settings.XmlTypes.Cast<string>().ToArray();
+            ScopeSelectorRegex = m_settings.ScopeSelectorRegex;
         }
 
-        public List<KeyShortcut> Shortcuts      { get; set; }
-        public string[]          XmlTypes       { get; private set; }
+        public List<KeyShortcut> Shortcuts          { get; set; }
+        public string[]          XmlTypes           { get; private set; }
+        public string            ScopeSelectorRegex { get; set; }
 
         public string XmlTypesString
         {
@@ -44,8 +46,9 @@ namespace CMcG.CodeAlignment.Business
 
         public void ResetSelectorTypes()
         {
-            var original = (StringCollection)Settings.Default.Properties["XmlTypes"].DefaultValue;
-            XmlTypes = original.Cast<string>().ToArray();
+            var original       = (StringCollection)Settings.Default.Properties["XmlTypes"].DefaultValue;
+            XmlTypes           = original.Cast<string>().ToArray();
+            ScopeSelectorRegex = (string)Settings.Default.Properties["ScopeSelectorRegex"].DefaultValue;
         }
 
         public void Save()
@@ -53,6 +56,7 @@ namespace CMcG.CodeAlignment.Business
             m_settings.Shortcuts = KeyShortcut.Serialize(Shortcuts.ToArray());
             m_settings.XmlTypes.Clear();
             m_settings.XmlTypes.AddRange(XmlTypes);
+            m_settings.ScopeSelectorRegex = ScopeSelectorRegex;
             m_settings.Save();
         }
     }
