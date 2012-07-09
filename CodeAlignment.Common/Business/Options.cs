@@ -6,6 +6,8 @@ using System.Collections.Specialized;
 namespace CMcG.CodeAlignment.Business
 {
     using Settings = Properties.Settings;
+    using System.IO;
+    using System.Xml.Serialization;
 
     public class Options
     {
@@ -46,8 +48,9 @@ namespace CMcG.CodeAlignment.Business
 
         public void ResetSelectorTypes()
         {
-            var original       = (StringCollection)Settings.Default.Properties["XmlTypes"].DefaultValue;
-            XmlTypes           = original.Cast<string>().ToArray();
+            var serializer     = new XmlSerializer(typeof(string[]));
+            var xml            = (string)Settings.Default.Properties["XmlTypes"].DefaultValue;
+            XmlTypes           = (string[])serializer.Deserialize(new StringReader(xml));
             ScopeSelectorRegex = (string)Settings.Default.Properties["ScopeSelectorRegex"].DefaultValue;
         }
 
