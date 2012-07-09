@@ -33,17 +33,20 @@ namespace CMcG.CodeAlignment
 
         static void SetupCommands()
         {
-            var functions = new AlignFunctions { Document = new Document(), Handle = PluginBase.nppData._nppHandle };
+            SetCommand( 0, "Align by...",            x => x.AlignByDialog(), new ShortcutKey(true, false, true,  Keys.Oemplus));
+            SetCommand( 1, "Align by equals",        x => x.AlignBy(Key.EqualsPlus));
+            SetCommand( 2, "Align by equals equals", x => x.AlignBy("=="));
+            SetCommand( 3, "Align by m_",            x => x.AlignBy(Key.M));
+            SetCommand( 4, "Align by quote (\")",    x => x.AlignBy(Key.Quotes));
+            SetCommand( 5, "Align by period",        x => x.AlignBy(Key.Period));
+            SetCommand( 6, "Align by space",         x => x.AlignBy(Key.Space));
+            SetCommand( 6, "Align from caret",       x => x.AlignByDialog(alignFromCaret:true));
+            SetCommand(99, "Align by key",           x => x.AlignByKey(),    new ShortcutKey(true, false, false, Keys.Oemplus));
+        }
 
-            PluginBase.SetCommand( 0, "Align by...",            () => functions.AlignByDialog(), new ShortcutKey(true, false, true,  Keys.Oemplus));
-            PluginBase.SetCommand( 1, "Align by equals",        () => functions.AlignBy(Key.EqualsPlus));
-            PluginBase.SetCommand( 2, "Align by equals equals", () => functions.AlignBy("=="));
-            PluginBase.SetCommand( 3, "Align by m_",            () => functions.AlignBy(Key.M));
-            PluginBase.SetCommand( 4, "Align by quote (\")",    () => functions.AlignBy(Key.Quotes));
-            PluginBase.SetCommand( 5, "Align by period",        () => functions.AlignBy(Key.Period));
-            PluginBase.SetCommand( 6, "Align by space",         () => functions.AlignBy(Key.Space));
-            PluginBase.SetCommand( 6, "Align from caret",       () => functions.AlignByDialog(alignFromCaret:true));
-            PluginBase.SetCommand(99, "Align by key",           functions.AlignByKey,    new ShortcutKey(true, false, false, Keys.Oemplus));
+        static void SetCommand(int index, string name, Action<AlignFunctions> action, ShortcutKey shortcut = new ShortcutKey())
+        {
+            PluginBase.SetCommand(index, name, () => action.Invoke(new AlignFunctions { Document = new Document(), Handle = PluginBase.nppData._nppHandle }), shortcut);
         }
 
         internal static void SetToolBarIcon()

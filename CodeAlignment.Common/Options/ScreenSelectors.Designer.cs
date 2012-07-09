@@ -35,13 +35,15 @@
             this.btnRestoreDefaults = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindOptions)).BeginInit();
             this.SuspendLayout();
             // 
             // lblXmlTypes
             // 
             this.lblXmlTypes.AutoSize = true;
-            this.lblXmlTypes.Location = new System.Drawing.Point(12, 41);
+            this.lblXmlTypes.Location = new System.Drawing.Point(12, 68);
             this.lblXmlTypes.Name = "lblXmlTypes";
             this.lblXmlTypes.Size = new System.Drawing.Size(65, 15);
             this.lblXmlTypes.TabIndex = 0;
@@ -53,10 +55,10 @@
             this.txtXmlTypes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtXmlTypes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindOptions, "XmlTypesString", true));
-            this.txtXmlTypes.Location = new System.Drawing.Point(15, 59);
+            this.txtXmlTypes.Location = new System.Drawing.Point(15, 86);
             this.txtXmlTypes.Multiline = true;
             this.txtXmlTypes.Name = "txtXmlTypes";
-            this.txtXmlTypes.Size = new System.Drawing.Size(135, 217);
+            this.txtXmlTypes.Size = new System.Drawing.Size(135, 190);
             this.txtXmlTypes.TabIndex = 1;
             // 
             // bindOptions
@@ -80,24 +82,45 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 15);
+            this.label1.Size = new System.Drawing.Size(247, 15);
             this.label1.TabIndex = 10;
-            this.label1.Text = "End of Scope Selector";
+            this.label1.Text = "End of scope line values (seperate with space)";
             // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindOptions, "ScopeSelectorRegex", true));
-            this.textBox1.Location = new System.Drawing.Point(139, 12);
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindOptions, "ScopeSelectorLineValues", true));
+            this.textBox1.Location = new System.Drawing.Point(265, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(470, 23);
+            this.textBox1.Size = new System.Drawing.Size(344, 23);
             this.textBox1.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindOptions, "ScopeSelectorLineEnds", true));
+            this.textBox2.Location = new System.Drawing.Point(265, 41);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(344, 23);
+            this.textBox2.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(239, 15);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "End of scope line ends (seperate with space)";
             // 
             // ScreenSelectors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRestoreDefaults);
@@ -119,5 +142,7 @@
         private System.Windows.Forms.Button btnRestoreDefaults;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
     }
 }

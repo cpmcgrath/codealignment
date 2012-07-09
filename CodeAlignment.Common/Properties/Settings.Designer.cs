@@ -114,13 +114,25 @@ namespace CMcG.CodeAlignment.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("^\\s*(\\{|\\}|\\};|\\(|\\)|)\\s*$")]
-        public string ScopeSelectorRegex {
+        [global::System.Configuration.DefaultSettingValueAttribute(" { } }; ( )")]
+        public string ScopeSelectorLineValues {
             get {
-                return ((string)(this["ScopeSelectorRegex"]));
+                return ((string)(this["ScopeSelectorLineValues"]));
             }
             set {
-                this["ScopeSelectorRegex"] = value;
+                this["ScopeSelectorLineValues"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ScopeSelectorLineEnds {
+            get {
+                return ((string)(this["ScopeSelectorLineEnds"]));
+            }
+            set {
+                this["ScopeSelectorLineEnds"] = value;
             }
         }
     }

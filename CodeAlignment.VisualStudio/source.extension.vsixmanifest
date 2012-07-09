@@ -3,7 +3,7 @@
     <Identifier Id="2adcbb11-89c4-451e-97f2-14049154ccad">
         <Name>Code alignment</Name>
         <Author>Chris McGrath</Author>
-        <Version>5.0.3</Version>
+        <Version>5.0.4</Version>
         <Description xml:space="preserve">Code alignment is a practice for formating your code.
 Based on principals from maths and other displines, code alignment gives extra meaning to your code by lining up similar code parts into columns.
 This is a practice everyone performs on most data using tables and spreadsheets, but unfortunately doesn't get applied to code often enough.</Description>
