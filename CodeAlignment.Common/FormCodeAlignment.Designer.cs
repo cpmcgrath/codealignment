@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.chkUseRegex = new System.Windows.Forms.CheckBox();
             this.chkAlignFromCaret = new System.Windows.Forms.CheckBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cboDelimiter = new System.Windows.Forms.ComboBox();
+            this.tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.btnOptions = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -93,11 +95,12 @@
             // btnOptions
             // 
             this.btnOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnOptions.Image = global::CMcG.CodeAlignment.Properties.Resources.Options;
             this.btnOptions.Location = new System.Drawing.Point(14, 111);
             this.btnOptions.Name = "btnOptions";
-            this.btnOptions.Size = new System.Drawing.Size(87, 27);
+            this.btnOptions.Size = new System.Drawing.Size(27, 27);
             this.btnOptions.TabIndex = 6;
-            this.btnOptions.Text = "Options";
+            this.tooltip.SetToolTip(this.btnOptions, "Options");
             this.btnOptions.UseVisualStyleBackColor = true;
             this.btnOptions.Click += new System.EventHandler(this.ShowOptions);
             // 
@@ -137,5 +140,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cboDelimiter;
         private System.Windows.Forms.Button btnOptions;
+        private System.Windows.Forms.ToolTip tooltip;
     }
 }
