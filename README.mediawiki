@@ -1,0 +1,9 @@
+==Code alignment==
+
+Code alignment is the practice of formatting your code vertically to improve readability.
+
+Based on principles borrowed from mathematics and other disciplines, code alignment gives extra meaning to your code by lining up similar data in columns. This is something we do naturally when working with tables and spreadsheets, but unfortunately it doesn't get applied to code often enough.
+
+The usual excuses are, "It's too hard. It takes too long. They don't pay me enough." With this extension, these excuses are no longer valid.
+
+For more information, examples, bug tracker and change logs visit the the code alignment website
