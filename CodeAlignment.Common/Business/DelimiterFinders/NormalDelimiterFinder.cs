@@ -7,12 +7,12 @@ namespace CMcG.CodeAlignment.Business
     {
         public virtual int GetIndex(string source, string delimiter, int minIndex, int tabSize)
         {
-            minIndex = TabbifyIndex(source, delimiter, minIndex, tabSize);
+            minIndex = TabbifyIndex(source, minIndex, tabSize);
 
             return source.Length >= minIndex ? source.IndexOf(delimiter, minIndex) : -1;
         }
 
-        public int TabbifyIndex(string source, string delimiter, int minIndex, int tabSize)
+        public int TabbifyIndex(string source, int minIndex, int tabSize)
         {
             int adjustment = 0;
             int index      = source.IndexOf('\t');

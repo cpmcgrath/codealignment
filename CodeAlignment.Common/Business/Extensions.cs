@@ -40,11 +40,11 @@ namespace CMcG.CodeAlignment.Business
                     throw new InvalidOperationException("Sequence was empty");
 
                 var max    = sourceIterator.Current;
-                var maxKey = selector(max);
+                var maxKey = selector.Invoke(max);
                 while (sourceIterator.MoveNext())
                 {
                     var candidate          = sourceIterator.Current;
-                    var candidateProjected = selector(candidate);
+                    var candidateProjected = selector.Invoke(candidate);
                     if (comparer.Compare(candidateProjected, maxKey) > 0)
                     {
                         max    = candidate;

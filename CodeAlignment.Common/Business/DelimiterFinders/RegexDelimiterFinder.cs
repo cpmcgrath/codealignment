@@ -8,7 +8,7 @@ namespace CMcG.CodeAlignment.Business
     {
         public override int GetIndex(string source, string delimiter, int minIndex, int tabSize)
         {
-            minIndex = TabbifyIndex(source, delimiter, minIndex, tabSize);
+            minIndex = TabbifyIndex(source, minIndex, tabSize);
 
             if (source.Length < minIndex)
                 return -1;

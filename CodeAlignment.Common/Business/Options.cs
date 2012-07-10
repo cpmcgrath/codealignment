@@ -84,7 +84,7 @@ namespace CMcG.CodeAlignment.Business
             m_settings.XmlTypes.Clear();
             m_settings.XmlTypes.AddRange(XmlTypes);
             m_settings.ScopeSelectorLineValues = ScopeSelectorLineValues;
-            m_settings.ScopeSelectorLineEnds = ScopeSelectorLineEnds;
+            m_settings.ScopeSelectorLineEnds   = ScopeSelectorLineEnds;
             m_settings.Save();
         }
     }
