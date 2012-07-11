@@ -16,6 +16,7 @@ namespace CMcG.CodeAlignment.Options
         void RestoreDefaults(object sender, EventArgs e)
         {
             m_options.ResetSelectorTypes();
+            bindOptions.ResetBindings(false);
         }
     }
 }
