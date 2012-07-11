@@ -16,9 +16,9 @@ namespace CMcG.CodeAlignment.Options
         {
             switch (e.Node.Name)
             {
-                case "nodeShortcuts"    : DisplayScreen(new ScreenShortcuts(m_options)); break;
-                case "nodeXmlFileTypes" : DisplayScreen(new ScreenSelectors(m_options)); break;
-                default                 : break;
+                case "nodeShortcuts"     : DisplayScreen(new ScreenShortcuts(m_options)); break;
+                case "nodeAutoSelection" : DisplayScreen(new ScreenSelectors(m_options)); break;
+                default                  : break;
             }
         }
 

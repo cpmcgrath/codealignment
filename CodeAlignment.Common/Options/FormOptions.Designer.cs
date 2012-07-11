@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Shortcuts");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("XML File Types");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Automatic Selection");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOptions));
             this.treeScreens = new System.Windows.Forms.TreeView();
             this.pnlMain = new System.Windows.Forms.Panel();
@@ -45,8 +45,8 @@
             this.treeScreens.Name = "treeScreens";
             treeNode1.Name = "nodeShortcuts";
             treeNode1.Text = "Shortcuts";
-            treeNode2.Name = "nodeXmlFileTypes";
-            treeNode2.Text = "XML File Types";
+            treeNode2.Name = "nodeAutoSelection";
+            treeNode2.Text = "Automatic Selection";
             this.treeScreens.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2});
