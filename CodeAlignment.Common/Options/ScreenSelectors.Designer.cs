@@ -46,7 +46,7 @@
             this.lblXmlTypes.Location = new System.Drawing.Point(12, 68);
             this.lblXmlTypes.Name = "lblXmlTypes";
             this.lblXmlTypes.Size = new System.Drawing.Size(65, 15);
-            this.lblXmlTypes.TabIndex = 0;
+            this.lblXmlTypes.TabIndex = 4;
             this.lblXmlTypes.Text = "XML Types";
             // 
             // txtXmlTypes
@@ -59,7 +59,7 @@
             this.txtXmlTypes.Multiline = true;
             this.txtXmlTypes.Name = "txtXmlTypes";
             this.txtXmlTypes.Size = new System.Drawing.Size(135, 190);
-            this.txtXmlTypes.TabIndex = 1;
+            this.txtXmlTypes.TabIndex = 5;
             // 
             // bindOptions
             // 
@@ -72,7 +72,7 @@
             this.btnRestoreDefaults.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.btnRestoreDefaults.Name = "btnRestoreDefaults";
             this.btnRestoreDefaults.Size = new System.Drawing.Size(125, 23);
-            this.btnRestoreDefaults.TabIndex = 9;
+            this.btnRestoreDefaults.TabIndex = 6;
             this.btnRestoreDefaults.Text = "Restore &defaults";
             this.btnRestoreDefaults.UseVisualStyleBackColor = true;
             this.btnRestoreDefaults.Click += new System.EventHandler(this.RestoreDefaults);
@@ -83,7 +83,7 @@
             this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(247, 15);
-            this.label1.TabIndex = 10;
+            this.label1.TabIndex = 0;
             this.label1.Text = "End of scope line values (seperate with space)";
             // 
             // textBox1
@@ -94,7 +94,7 @@
             this.textBox1.Location = new System.Drawing.Point(265, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(344, 23);
-            this.textBox1.TabIndex = 11;
+            this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
@@ -104,7 +104,7 @@
             this.textBox2.Location = new System.Drawing.Point(265, 41);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(344, 23);
-            this.textBox2.TabIndex = 13;
+            this.textBox2.TabIndex = 3;
             // 
             // label2
             // 
@@ -112,7 +112,7 @@
             this.label2.Location = new System.Drawing.Point(12, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(239, 15);
-            this.label2.TabIndex = 12;
+            this.label2.TabIndex = 2;
             this.label2.Text = "End of scope line ends (seperate with space)";
             // 
             // ScreenSelectors
