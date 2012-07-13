@@ -53,11 +53,11 @@
             // 
             this.chkUseIdeTabSettings.AutoSize = true;
             this.chkUseIdeTabSettings.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bindOptions, "UseIdeTabSettings", true));
-            this.chkUseIdeTabSettings.Location = new System.Drawing.Point(3, 64);
+            this.chkUseIdeTabSettings.Location = new System.Drawing.Point(3, 60);
             this.chkUseIdeTabSettings.Name = "chkUseIdeTabSettings";
-            this.chkUseIdeTabSettings.Size = new System.Drawing.Size(305, 19);
+            this.chkUseIdeTabSettings.Size = new System.Drawing.Size(209, 19);
             this.chkUseIdeTabSettings.TabIndex = 1;
-            this.chkUseIdeTabSettings.Text = "If the IDE keeps Tabs as Tabs, use tabs for alignments";
+            this.chkUseIdeTabSettings.Text = "Use IDE tab settings for alignments";
             this.chkUseIdeTabSettings.UseVisualStyleBackColor = true;
             // 
             // ScreenGeneral
