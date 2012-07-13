@@ -16,6 +16,7 @@ namespace CMcG.CodeAlignment.Options
         {
             switch (e.Node.Name)
             {
+                case "nodeGeneral"       : DisplayScreen(new ScreenGeneral  (m_options)); break;
                 case "nodeShortcuts"     : DisplayScreen(new ScreenShortcuts(m_options)); break;
                 case "nodeAutoSelection" : DisplayScreen(new ScreenSelectors(m_options)); break;
                 default                  : break;

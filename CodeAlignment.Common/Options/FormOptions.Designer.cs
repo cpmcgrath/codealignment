@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Shortcuts");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Automatic Selection");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("General");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Shortcuts");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Automatic Selection");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOptions));
             this.treeScreens = new System.Windows.Forms.TreeView();
             this.pnlMain = new System.Windows.Forms.Panel();
@@ -43,13 +44,16 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.treeScreens.Location = new System.Drawing.Point(12, 12);
             this.treeScreens.Name = "treeScreens";
-            treeNode1.Name = "nodeShortcuts";
-            treeNode1.Text = "Shortcuts";
-            treeNode2.Name = "nodeAutoSelection";
-            treeNode2.Text = "Automatic Selection";
+            treeNode1.Name = "nodeGeneral";
+            treeNode1.Text = "General";
+            treeNode2.Name = "nodeShortcuts";
+            treeNode2.Text = "Shortcuts";
+            treeNode3.Name = "nodeAutoSelection";
+            treeNode3.Text = "Automatic Selection";
             this.treeScreens.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,
-            treeNode2});
+            treeNode2,
+            treeNode3});
             this.treeScreens.Size = new System.Drawing.Size(163, 382);
             this.treeScreens.TabIndex = 0;
             this.treeScreens.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.ShowScreen);

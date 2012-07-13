@@ -94,6 +94,12 @@
     <Compile Include="FormKeyGrabber.Designer.cs">
       <DependentUpon>FormKeyGrabber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Options\ScreenGeneral.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\ScreenGeneral.Designer.cs">
+      <DependentUpon>ScreenGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Options\FormOptions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKeyGrabber.resx">
       <DependentUpon>FormKeyGrabber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\ScreenGeneral.resx">
+      <DependentUpon>ScreenGeneral.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Options\FormOptions.resx">
       <DependentUpon>FormOptions.cs</DependentUpon>
