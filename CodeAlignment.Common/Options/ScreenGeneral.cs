@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using CMcG.CodeAlignment.Properties;
 
 namespace CMcG.CodeAlignment.Options
 {
@@ -11,6 +12,12 @@ namespace CMcG.CodeAlignment.Options
             InitializeComponent();
             m_options              = options;
             bindOptions.DataSource = m_options;
+        }
+
+        private void ResetMruList(object sender, EventArgs e)
+        {
+            Settings.Default.Delimiters = new System.Collections.Specialized.StringCollection();
+            Settings.Default.Save();
         }
     }
 }
