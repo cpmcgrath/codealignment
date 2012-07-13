@@ -34,7 +34,7 @@ namespace CMcG.CodeAlignment
 
         Alignment CreateAlignment(bool useRegex = false)
         {
-            var alignment = new Alignment { View = Document };
+            var alignment = new Alignment { View = Document, UseIdeTabSettings = m_options.UseIdeTabSettings };
 
             if (m_options.XmlTypes.Contains(Document.FileType))
                 alignment.Selector = new XmlScopeSelector();

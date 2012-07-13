@@ -7,9 +7,10 @@ namespace CMcG.CodeAlignment.Business
 {
     public class Alignment
     {
-        public IDocument        View     { get; set; }
-        public IScopeSelector   Selector { get; set; }
-        public IDelimiterFinder Finder   { get; set; }
+        public IDocument        View              { get; set; }
+        public IScopeSelector   Selector          { get; set; }
+        public IDelimiterFinder Finder            { get; set; }
+        public bool             UseIdeTabSettings { get; set; }
 
         public Alignment()
         {
@@ -47,7 +48,7 @@ namespace CMcG.CodeAlignment.Business
         string GetSpacesToInsert(int startIndex, int endIndex)
         {
             bool useSpaces = View.ConvertTabsToSpaces;
-            if (useSpaces)
+            if (useSpaces || !UseIdeTabSettings)
                 return string.Empty.PadLeft(endIndex - startIndex);
 
             int spaces = endIndex % View.TabSize;

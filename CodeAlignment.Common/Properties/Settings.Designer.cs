@@ -135,5 +135,17 @@ namespace CMcG.CodeAlignment.Properties {
                 this["ScopeSelectorLineEnds"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseIdeTabSettings {
+            get {
+                return ((bool)(this["UseIdeTabSettings"]));
+            }
+            set {
+                this["UseIdeTabSettings"] = value;
+            }
+        }
     }
 }

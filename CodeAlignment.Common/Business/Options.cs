@@ -19,6 +19,7 @@ namespace CMcG.CodeAlignment.Business
             XmlTypes                = m_settings.XmlTypes.Cast<string>().ToArray();
             ScopeSelectorLineValues = m_settings.ScopeSelectorLineValues;
             ScopeSelectorLineEnds   = m_settings.ScopeSelectorLineEnds;
+            UseIdeTabSettings       = m_settings.UseIdeTabSettings;
         }
 
         public List<KeyShortcut> Shortcuts { get; set; }
@@ -45,6 +46,7 @@ namespace CMcG.CodeAlignment.Business
 
         public string ScopeSelectorLineValues { get; set; }
         public string ScopeSelectorLineEnds   { get; set; }
+        public bool   UseIdeTabSettings       { get; set; }
 
         public string XmlTypesString
         {
@@ -85,6 +87,7 @@ namespace CMcG.CodeAlignment.Business
             m_settings.XmlTypes.AddRange(XmlTypes);
             m_settings.ScopeSelectorLineValues = ScopeSelectorLineValues;
             m_settings.ScopeSelectorLineEnds   = ScopeSelectorLineEnds;
+            m_settings.UseIdeTabSettings       = UseIdeTabSettings;
             m_settings.Save();
         }
     }
