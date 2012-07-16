@@ -6,4 +6,4 @@ Based on principles borrowed from mathematics and other disciplines, code alignm
 
 The usual excuses are, "It's too hard. It takes too long. They don't pay me enough." With this extension, these excuses are no longer valid.
 
-For more information, examples, bug tracker and change logs visit the the code alignment website
+For more information, examples, bug tracker and change logs visit the the code alignment website.
