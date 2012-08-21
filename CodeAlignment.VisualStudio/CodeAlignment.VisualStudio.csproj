@@ -109,9 +109,15 @@
   <ItemGroup>
     <None Include="Resources\CodeAlignmentVSBanner.png" />
     <Resource Include="Resources\Images_32bit.png" />
-    <Resource Include="..\CodeAlignment.ico">
+    <Content Include="..\CodeAlignment.ico">
       <Link>Resources\CodeAlignment.ico</Link>
-    </Resource>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="CodeAlignment.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="CodeAlignmentVSBanner.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>

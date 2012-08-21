@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 namespace CMcG.CodeAlignment
 {
     [PackageRegistration(UseManagedResourcesOnly = true)]
-    [InstalledProductRegistration("#110", "#112", "6.0", IconResourceID = 400)]
+    [InstalledProductRegistration("#110", "#112", "6.1", IconResourceID = 400)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(GuidList.PackageGuidStr)]
     public sealed class CodeAlignmentPackage : Package
