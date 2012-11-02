@@ -32,27 +32,14 @@ namespace CMcG.CodeAlignment.Business
 
         public static TSource MaxBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> selector)
         {
+            return source.MaxItemsBy(selector).First();
+        }
+
+        public static IEnumerable<TSource> MaxItemsBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> selector)
+        {
+            var maxValue = source.Max(selector);
             var comparer = Comparer<TKey>.Default;
-
-            using (var sourceIterator = source.GetEnumerator())
-            {
-                if (!sourceIterator.MoveNext())
-                    throw new InvalidOperationException("Sequence was empty");
-
-                var max    = sourceIterator.Current;
-                var maxKey = selector.Invoke(max);
-                while (sourceIterator.MoveNext())
-                {
-                    var candidate          = sourceIterator.Current;
-                    var candidateProjected = selector.Invoke(candidate);
-                    if (comparer.Compare(candidateProjected, maxKey) > 0)
-                    {
-                        max    = candidate;
-                        maxKey = candidateProjected;
-                    }
-                }
-                return max;
-            }
+            return source.Where(x => comparer.Compare(selector.Invoke(x), maxValue) == 0);
         }
 
         public static string Aggregate(this IEnumerable<string> source, string join)

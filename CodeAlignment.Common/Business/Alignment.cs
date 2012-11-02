@@ -26,7 +26,8 @@ namespace CMcG.CodeAlignment.Business
             if (!data.Any())
                 return;
 
-            int targetPosition = data.MaxBy(y => y.Position).GetPositionToAlignTo(addSpace, View.TabSize);
+            int targetPosition = data.MaxItemsBy(y => y.Position)
+                                     .Max(x => x.GetPositionToAlignTo(addSpace, View.TabSize));
 
             CommitChanges(data, targetPosition);
         }
