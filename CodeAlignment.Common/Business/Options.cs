@@ -1,19 +1,25 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
+using System.Xml.Linq;
+using System.Configuration;
+using System.Xml.Serialization;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Text.RegularExpressions;
 
 namespace CMcG.CodeAlignment.Business
 {
     using Settings = Properties.Settings;
-    using System.IO;
-    using System.Xml.Serialization;
-    using System.Text.RegularExpressions;
-
+    
     public class Options
     {
         Settings m_settings = Settings.Default;
         public Options()
+        {
+            Reload();
+        }
+
+        void Reload()
         {
             Shortcuts               = KeyShortcut.Get(m_settings.Shortcuts).ToList();
             XmlTypes                = m_settings.XmlTypes.Cast<string>().ToArray();
@@ -89,6 +95,36 @@ namespace CMcG.CodeAlignment.Business
             m_settings.ScopeSelectorLineEnds   = ScopeSelectorLineEnds;
             m_settings.UseIdeTabSettings       = UseIdeTabSettings;
             m_settings.Save();
+        }
+
+        public void SaveAs(string filename)
+        {
+            var node = new XElement("Settings");
+
+            foreach (SettingsPropertyValue prop in m_settings.PropertyValues)
+            {
+                if (!prop.UsingDefaultValue)
+                    node.Add(new XElement(prop.Name) { Value = (string)prop.SerializedValue });
+            }
+
+            node.Save(filename);
+        }
+
+        public void LoadFrom(string filename)
+        {
+            var node = XElement.Load(filename);
+            var settings = from setting in node.Elements()
+                           select new { Key = setting.Name.ToString(), Value = setting.Value };
+
+            foreach (var setting in settings)
+            {
+                var prop = m_settings.PropertyValues[setting.Key];
+                prop.SerializedValue = setting.Value;
+                prop.Deserialized    = false;
+            }
+
+            m_settings.Save();
+            Reload();
         }
     }
 }
