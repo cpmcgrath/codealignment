@@ -7,10 +7,17 @@ namespace CMcG.CodeAlignment
 {
     public class AlignFunctions
     {
-        Business.Options m_options = new Business.Options();
+        Business.Options m_options       = new Business.Options();
+        Point            m_keyGrabOffset = new Point(10, -50);
 
         public IDocument Document { get; set; }
         public IntPtr    Handle   { get; set; }
+
+        public Point KeyGrabOffset
+        {
+            get { return m_keyGrabOffset; }
+            set { m_keyGrabOffset = value; }
+        }
 
         public void AlignBy(string alignDelimiter, bool alignFromCaret = false, bool useRegex = false, bool addSpace = false)
         {
@@ -57,7 +64,7 @@ namespace CMcG.CodeAlignment
         {
             using (var form = new FormKeyGrabber())
             {
-                form.SetLocation(Handle, new Point(10, -40));
+                form.SetLocation(Handle, KeyGrabOffset);
 
                 if (form.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
                     return;

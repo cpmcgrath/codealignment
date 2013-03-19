@@ -25,7 +25,12 @@ namespace CMcG.CodeAlignment
 
         public override void Execute(uint cmdId)
         {
-            var functions = new AlignFunctions { Document = new Document(m_view), Handle = m_textViewAdapter.GetWindowHandle() };
+            var functions = new AlignFunctions
+            {
+                Document      = new Document(m_view),
+                Handle        = m_textViewAdapter.GetWindowHandle(),
+                KeyGrabOffset = new System.Drawing.Point(10, -35)
+            };
             switch (cmdId)
             {
                 case Commands.AlignBy             : functions.AlignByDialog();                    break;
