@@ -6,10 +6,13 @@ namespace CMcG.CodeAlignment.Business
 {
     public class XmlScopeSelector : IScopeSelector
     {
+        public int? Start { get; set; }
+        public int? End   { get; set; }
+
         public IEnumerable<ILine> GetLinesToAlign(IDocument view)
         {
-            int start = view.StartSelectionLineNumber;
-            int end   = view.EndSelectionLineNumber;
+            int start = Start ?? view.StartSelectionLineNumber;
+            int end   = End   ?? view.EndSelectionLineNumber;
 
             if (start == end)
             {

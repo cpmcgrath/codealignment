@@ -67,5 +67,10 @@ namespace CMcG.CodeAlignment.Implementations
         {
             get { return "." + m_doc.TextBuffer.ContentType.TypeName.ToLower(); }
         }
+
+        public void Refresh()
+        {
+            m_snapshot = m_doc.TextSnapshot;
+        }
     }
 }

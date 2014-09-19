@@ -112,5 +112,10 @@ namespace CMcG.CodeAlignment
         {
             return new Edit();
         }
+
+
+        public void Refresh()
+        {
+        }
     }
 }

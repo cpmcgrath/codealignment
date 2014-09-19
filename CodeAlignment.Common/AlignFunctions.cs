@@ -44,9 +44,18 @@ namespace CMcG.CodeAlignment
             var alignment = new Alignment { View = Document, UseIdeTabSettings = m_options.UseIdeTabSettings };
 
             if (m_options.XmlTypes.Contains(Document.FileType))
-                alignment.Selector = new XmlScopeSelector();
+                alignment.Selector = new XmlScopeSelector
+                                     {
+                                         Start              = Document.StartSelectionLineNumber,
+                                         End                = Document.EndSelectionLineNumber
+                                     };
             else
-                alignment.Selector = new GeneralScopeSelector { ScopeSelectorRegex = m_options.ScopeSelectorRegex };
+                alignment.Selector = new GeneralScopeSelector
+                                     {
+                                         ScopeSelectorRegex = m_options.ScopeSelectorRegex,
+                                         Start              = Document.StartSelectionLineNumber,
+                                         End                = Document.EndSelectionLineNumber
+                                     };
 
             if (useRegex)
                 alignment.Finder = new RegexDelimiterFinder();
@@ -62,17 +71,12 @@ namespace CMcG.CodeAlignment
 
         public void AlignByKey()
         {
-            using (var form = new FormKeyGrabber())
+            var viewModel = new AlignmentViewModel(this, CreateAlignment());
+
+            using (var form = new FormKeyGrabber { ViewModel = viewModel })
             {
                 form.SetLocation(Handle, KeyGrabOffset);
-
-                if (form.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
-                    return;
-
-                if (form.AlignFromPosition)
-                    AlignByDialog(alignFromCaret:true);
-                else
-                    AlignBy(form.Result, form.ForceFromCaret);
+                form.ShowDialog();
             }
         }
     }

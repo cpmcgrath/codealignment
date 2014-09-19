@@ -14,5 +14,6 @@ namespace CMcG.CodeAlignment.Business
 
         ILine GetLineFromLineNumber(int lineNo);
         IEdit StartEdit();
+        void Refresh();
     }
 }

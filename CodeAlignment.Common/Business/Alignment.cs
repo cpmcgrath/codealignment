@@ -17,19 +17,20 @@ namespace CMcG.CodeAlignment.Business
             Finder = new NormalDelimiterFinder();
         }
 
-        public void PerformAlignment(string delimiter, int minIndex = 0, bool addSpace = false)
+        public int PerformAlignment(string delimiter, int minIndex = 0, bool addSpace = false)
         {
             var lines = Selector.GetLinesToAlign(View);
             var data  = lines.Select(x => new LineDetails(x, Finder, delimiter, minIndex, View.TabSize))
                              .Where(y => y.Index >= 0).ToArray();
 
             if (!data.Any())
-                return;
+                return -1;
 
             int targetPosition = data.MaxItemsBy(y => y.Position)
                                      .Max(x => x.GetPositionToAlignTo(addSpace, View.TabSize));
 
             CommitChanges(data, targetPosition);
+            return targetPosition;
         }
 
         void CommitChanges(LineDetails[] data, int targetPosition)

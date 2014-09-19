@@ -59,6 +59,7 @@
     <Compile Include="Controls\ListControl.Designer.cs">
       <DependentUpon>ListControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlignmentViewModel.cs" />
     <Compile Include="FormAbout.cs">
       <SubType>Form</SubType>
     </Compile>

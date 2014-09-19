@@ -28,22 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label lblDescription;
             System.Windows.Forms.PictureBox icon;
-            lblDescription = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
             icon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(icon)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDescription
             // 
-            lblDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            lblDescription.Location = new System.Drawing.Point(106, 0);
-            lblDescription.Name = "lblDescription";
-            lblDescription.Size = new System.Drawing.Size(394, 20);
-            lblDescription.TabIndex = 0;
-            lblDescription.Text = "Waiting for second key of chord...";
-            lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDescription.Location = new System.Drawing.Point(106, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(394, 20);
+            this.lblDescription.TabIndex = 0;
+            this.lblDescription.Text = "Waiting for second key of chord...";
+            this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // icon
             // 
@@ -61,7 +60,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 20);
-            this.Controls.Add(lblDescription);
+            this.Controls.Add(this.lblDescription);
             this.Controls.Add(icon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(500, 80);
@@ -76,6 +75,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblDescription;
 
 
     }

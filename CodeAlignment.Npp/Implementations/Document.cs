@@ -83,5 +83,10 @@ namespace CMcG.CodeAlignment
         {
             return new Edit(m_docPointer);
         }
+
+
+        public void Refresh()
+        {
+        }
     }
 }
