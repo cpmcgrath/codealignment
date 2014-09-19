@@ -121,9 +121,7 @@
     <value>Code alignment</value>
   </data>
   <data name="112" xml:space="preserve">
-    <value>Code alignment is a practice for formating your code.
-Based on principals from maths and other displines, code alignment gives extra meaning to your code by lining up similar code parts into columns.
-This is a practice everyone performs on most data using tables and spreadsheets, but unfortunately doesn't get applied to code often enough.</value>
+    <value>Code alignment helps you present your code beautifully, enhancing clarity and readability.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="400" type="System.Resources.ResXFileRef, System.Windows.Forms">
