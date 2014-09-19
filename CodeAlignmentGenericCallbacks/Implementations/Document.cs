@@ -56,7 +56,7 @@ namespace CMcG.CodeAlignment
             }
         }
 
-        public int CarretColumn
+        public int CaretColumn
         {
             get
             {

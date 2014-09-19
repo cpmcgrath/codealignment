@@ -32,7 +32,7 @@ namespace CMcG.CodeAlignment.Implementations
             get { return m_snapshot.GetLineNumberFromPosition(m_doc.Selection.End.Position); }
         }
 
-        public int CarretColumn
+        public int CaretColumn
         {
             get
             {

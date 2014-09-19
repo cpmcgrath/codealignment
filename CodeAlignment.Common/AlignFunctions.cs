@@ -22,7 +22,7 @@ namespace CMcG.CodeAlignment
         public void AlignBy(string alignDelimiter, bool alignFromCaret = false, bool useRegex = false, bool addSpace = false)
         {
             if (!string.IsNullOrEmpty(alignDelimiter))
-                CreateAlignment(useRegex).PerformAlignment(alignDelimiter, alignFromCaret ? Document.CarretColumn : 0, addSpace);
+                CreateAlignment(useRegex).PerformAlignment(alignDelimiter, alignFromCaret ? Document.CaretColumn : 0, addSpace);
         }
 
         public void AlignBy(Key key, bool forceFromCaret = false)

@@ -37,7 +37,7 @@ namespace CMcG.CodeAlignment
             get { return GetLineNumberFromPos((int)Win32.SendMessage(m_docPointer, SciMsg.SCI_GETSELECTIONNEND, 0, 0)); }
         }
 
-        public int CarretColumn
+        public int CaretColumn
         {
             get
             {

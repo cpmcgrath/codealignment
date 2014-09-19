@@ -7,7 +7,7 @@ namespace CMcG.CodeAlignment.Business
         int    LineCount                { get; }
         int    StartSelectionLineNumber { get; }
         int    EndSelectionLineNumber   { get; }
-        int    CarretColumn             { get; }
+        int    CaretColumn              { get; }
         bool   ConvertTabsToSpaces      { get; }
         int    TabSize                  { get; }
         string FileType                 { get; }

@@ -51,7 +51,7 @@ namespace CMcG.CodeAlignment
                 return m_lastAlignment + 1;
 
             if (forceFromCaret || shortcut.AlignFromCaret)
-                return m_functions.Document.CarretColumn;
+                return m_functions.Document.CaretColumn;
 
             return 0;
         }
