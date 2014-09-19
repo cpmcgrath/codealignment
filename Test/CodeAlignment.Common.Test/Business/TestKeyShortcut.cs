@@ -31,10 +31,10 @@ namespace CMcG.CodeAlignment.Test.Business
 
             Assert.Equal(shortcut.AddSpace,       clone.AddSpace);
             Assert.Equal(shortcut.AlignFromCaret, clone.AlignFromCaret);
-            Assert.Equal(shortcut.Alignment     , clone.Alignment     );
-            Assert.Equal(shortcut.Language      , clone.Language      );
-            Assert.Equal(shortcut.UseRegex      , clone.UseRegex      );
-            Assert.Equal(shortcut.Value         , clone.Value         );
+            Assert.Equal(shortcut.Alignment,      clone.Alignment);
+            Assert.Equal(shortcut.Language,       clone.Language);
+            Assert.Equal(shortcut.UseRegex,       clone.UseRegex);
+            Assert.Equal(shortcut.Value,          clone.Value);
         }
     }
 }

@@ -39,12 +39,24 @@ namespace CMcG.CodeAlignment.Test.Business
         public void MaxBy()
         {
             var data = new[] { "A", "B", "C", "DZ" };
-            Assert.Throws<NullReferenceException>   (() => ((IEnumerable<string>)null).MaxBy(x => x.Length));
-            Assert.Throws<NullReferenceException>   (() => data.MaxBy<string, int>(null));
+            Assert.Throws<ArgumentNullException>    (() => ((IEnumerable<string>)null).MaxBy(x => x.Length));
+            Assert.Throws<ArgumentNullException>    (() => data.MaxBy<string, int>(null));
             Assert.Throws<InvalidOperationException>(() => new string[0].MaxBy(x => x.Length));
 
             Assert.Equal("DZ", data.MaxBy(x => x.Length));
             Assert.Equal("A",  data.Take(3).MaxBy(x => x.Length));
+        }
+
+        [Fact]
+        public void MaxItemsBy()
+        {
+            var data = new[] { "A", "B", "C", "AA", "BB", "DZZ" };
+            Assert.Throws<ArgumentNullException>    (() => ((IEnumerable<string>)null).MaxItemsBy(x => x.Length));
+            Assert.Throws<ArgumentNullException>    (() => data.MaxItemsBy<string, int>(null));
+            Assert.Throws<InvalidOperationException>(() => new string[0].MaxItemsBy(x => x.Length));
+
+            Assert.Equal(new[] { "DZZ" },      data        .MaxItemsBy(x => x.Length));
+            Assert.Equal(new[] { "AA", "BB" }, data.Take(5).MaxItemsBy(x => x.Length));
         }
 
         [Fact]

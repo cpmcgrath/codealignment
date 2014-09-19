@@ -11,7 +11,7 @@ namespace CMcG.CodeAlignment.Test.Business
         [Fact]
         public void PerformAlignment()
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 }

@@ -11,37 +11,37 @@ namespace CMcG.CodeAlignment.Test.Business
         [Fact]
         public void ScopeSelectorRegex()
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
 
         [Fact]
         public void XmlTypesString()
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
 
         [Fact]
         public void GetShortcut()
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
 
         [Fact]
         public void ResetShortcuts()
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
 
         [Fact]
         public void ResetSelectorTypes()
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
 
         [Fact]
         public void Save()
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 }
