@@ -23,7 +23,7 @@ namespace CMcG.CodeAlignment.Test.Business.Mocks
 
         public int    StartSelectionLineNumber { get; set; }
         public int    EndSelectionLineNumber   { get; set; }
-        public int    CarretColumn             { get; set; }
+        public int    CaretColumn              { get; set; }
         public bool   ConvertTabsToSpaces      { get; set; }
         public int    TabSize                  { get; set; }
         public string FileType                 { get; set; }
@@ -36,6 +36,10 @@ namespace CMcG.CodeAlignment.Test.Business.Mocks
         public IEdit StartEdit()
         {
             return new MockEdit();
+        }
+
+        public void Refresh()
+        {
         }
     }
 }
