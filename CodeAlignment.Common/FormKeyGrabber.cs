@@ -60,12 +60,14 @@ namespace CMcG.CodeAlignment
             }
         }
 
-        const int KEY_UP       = 257,
-                  LEFT_CONTROL = -1071841279;
+        const int KEY_UP        = 257,
+                  LEFT_CONTROL  = -1071841279,
+                  RIGHT_CONTROL = -1055064063;
 
         protected override void WndProc(ref Message m)
         {
-            if (m_isChained && m.Msg == KEY_UP && m.LParam.ToInt32() == LEFT_CONTROL)
+            if (m_isChained && m.Msg == KEY_UP
+            && (m.LParam.ToInt32() == LEFT_CONTROL || m.LParam.ToInt32() == RIGHT_CONTROL))
             {
                 Close();
             }
