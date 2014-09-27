@@ -21,7 +21,7 @@ namespace CMcG.CodeAlignment
         {
             if (e.KeyCode == Keys.Back)
             {
-                ViewModel.AlignFromPosition();
+                Disposed += (s, a) => ViewModel.AlignFromPosition();
                 Close();
                 return;
             }
