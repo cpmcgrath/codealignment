@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\DelimiterFinders\DelimiterResult.cs" />
     <Compile Include="Business\LineDetails.cs" />
     <Compile Include="Business\Options.cs" />
     <Compile Include="Business\Key.cs" />
