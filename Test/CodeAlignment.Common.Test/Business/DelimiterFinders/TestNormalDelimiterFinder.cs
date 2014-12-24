@@ -12,10 +12,10 @@ namespace CMcG.CodeAlignment.Test.Business.DelimiterFinders
         public void GetIndex()
         {
             var instance = new NormalDelimiterFinder();
-            Assert.Equal(0, instance.GetIndex("a",      "a", 0, 4));
-            Assert.Equal(1, instance.GetIndex("\ta",    "a", 4, 4));
-            Assert.Equal(2, instance.GetIndex(" \ta",   "a", 4, 4));
-            Assert.Equal(4, instance.GetIndex("\t   a", "a", 3, 4));
+            Assert.Equal(0, instance.GetIndex("a",      "a", 0, 4).CompareIndex);
+            Assert.Equal(1, instance.GetIndex("\ta",    "a", 4, 4).CompareIndex);
+            Assert.Equal(2, instance.GetIndex(" \ta",   "a", 4, 4).CompareIndex);
+            Assert.Equal(4, instance.GetIndex("\t   a", "a", 3, 4).CompareIndex);
         }
 
         [Fact]
