@@ -5,7 +5,7 @@ using CMcG.CodeAlignment.Properties;
 
 namespace CMcG.CodeAlignment
 {
-    public partial class FormCodeAlignment : Controls.BaseForm
+    public partial class FormCodeAlignment : Controls.BaseForm, Interactions.IAlignmentDetails
     {
         public FormCodeAlignment()
         {

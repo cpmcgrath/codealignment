@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignment.Common.Test",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{3C9EEF60-DF71-4654-A77C-0B7E3621C2E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignment.Common.WinForms", "CodeAlignment.Common.WinForms\CodeAlignment.Common.WinForms.csproj", "{F343E003-1A69-41FE-A014-76BB53034914}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{F54B4D8A-EA40-434E-8A6B-8F38B61C023D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F54B4D8A-EA40-434E-8A6B-8F38B61C023D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F54B4D8A-EA40-434E-8A6B-8F38B61C023D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F343E003-1A69-41FE-A014-76BB53034914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F343E003-1A69-41FE-A014-76BB53034914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F343E003-1A69-41FE-A014-76BB53034914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F343E003-1A69-41FE-A014-76BB53034914}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

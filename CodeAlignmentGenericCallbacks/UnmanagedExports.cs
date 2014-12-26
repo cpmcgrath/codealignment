@@ -55,7 +55,14 @@ namespace CMcG.CodeAlignment
 
         static AlignFunctions Functions
         {
-            get { return new AlignFunctions { Document = new Document(), Handle = IntPtr.Zero }; }
+            get
+            {
+                return new AlignFunctions
+                {
+                    UIManager = new UIManager(),
+                    Document  = new Document(),
+                    Handle    = IntPtr.Zero
+                }; }
         }
 
         #region Align Function Exports

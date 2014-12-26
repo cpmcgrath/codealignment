@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using System.Configuration;
+using System.ComponentModel;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -11,7 +12,7 @@ namespace CMcG.CodeAlignment.Business
 {
     using Settings = Properties.Settings;
     
-    public class Options
+    public class Options : INotifyPropertyChanged
     {
         Settings m_settings = Settings.Default;
         public Options()
@@ -73,8 +74,9 @@ namespace CMcG.CodeAlignment.Business
 
         public void ResetShortcuts()
         {
-            var xml = (string)Settings.Default.Properties["Shortcuts"].DefaultValue;
+            var xml   = (string)Settings.Default.Properties["Shortcuts"].DefaultValue;
             Shortcuts = KeyShortcut.Get(xml).ToList();
+            FirePropertyChanged("Shortcuts");
         }
 
         public void ResetSelectorTypes()
@@ -84,6 +86,7 @@ namespace CMcG.CodeAlignment.Business
             XmlTypes                = (string[])serializer.Deserialize(new StringReader(xml));
             ScopeSelectorLineValues = (string)Settings.Default.Properties["ScopeSelectorLineValues"].DefaultValue;
             ScopeSelectorLineEnds   = (string)Settings.Default.Properties["ScopeSelectorLineEnds"]  .DefaultValue;
+            FirePropertyChanged("XmlTypes", "ScopeSelectorLineValues", "ScopeSelectorLineEnds");
         }
 
         public void Save()
@@ -126,5 +129,13 @@ namespace CMcG.CodeAlignment.Business
             m_settings.Save();
             Reload();
         }
+
+        void FirePropertyChanged(params string[] propertyNames)
+        {
+            foreach (var propertyName in propertyNames)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
     }
 }

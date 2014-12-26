@@ -18,8 +18,9 @@ namespace CMcG.CodeAlignment
         {
             if (args.Name.Contains("CodeAlignment.Common"))
             {
+                var name     = args.Name.Substring(0, args.Name.IndexOf(','));
                 var location = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                return Assembly.LoadFile(Path.Combine(location, @"CodeAlignment\CodeAlignment.Common.dll"));
+                return Assembly.LoadFile(Path.Combine(location, @"CodeAlignment\" + name + ".dll"));
             }
 
             return null;
