@@ -29,7 +29,7 @@ namespace CMcG.CodeAlignment.Implementations
             get { return m_textEditor.GetLineNumberFromPosition(m_textEditor.SelectionStart + m_textEditor.SelectionLength); }
         }
 
-        public int CarretColumn
+        public int CaretColumn
         {
             get { return m_textEditor.GetLineOffsetFromPosition(m_textEditor.CaretPosition); }
         }

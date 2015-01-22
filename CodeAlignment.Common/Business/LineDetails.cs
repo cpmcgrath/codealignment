@@ -11,8 +11,8 @@ namespace CMcG.CodeAlignment.Business
         {
             var withoutTabs = line.Text.ReplaceTabs(tabSize);
             Line            = line;
-            Index           = finder.GetIndex(line.Text,   delimiter, minIndex, tabSize);
-            Position        = finder.GetIndex(withoutTabs, delimiter, minIndex, tabSize);
+            Index           = finder.GetIndex(line.Text,   delimiter, minIndex, tabSize).InsertIndex;
+            Position        = finder.GetIndex(withoutTabs, delimiter, minIndex, tabSize).CompareIndex;
         }
 
         public ILine Line     { get; private set; }

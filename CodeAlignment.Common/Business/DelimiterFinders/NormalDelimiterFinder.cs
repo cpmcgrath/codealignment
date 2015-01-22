@@ -5,11 +5,12 @@ namespace CMcG.CodeAlignment.Business
 {
     public class NormalDelimiterFinder : IDelimiterFinder
     {
-        public virtual int GetIndex(string source, string delimiter, int minIndex, int tabSize)
+        public virtual DelimiterResult GetIndex(string source, string delimiter, int minIndex, int tabSize)
         {
             minIndex = TabbifyIndex(source, minIndex, tabSize);
 
-            return source.Length >= minIndex ? source.IndexOf(delimiter, minIndex) : -1;
+            int result = source.Length >= minIndex ? source.IndexOf(delimiter, minIndex) : -1;
+            return DelimiterResult.Create(result);
         }
 
         public int TabbifyIndex(string source, int minIndex, int tabSize)
