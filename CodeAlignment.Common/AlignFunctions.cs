@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Drawing;
 using CMcG.CodeAlignment.Business;
+using CMcG.CodeAlignment.Interactions;
 
 namespace CMcG.CodeAlignment
 {
@@ -10,8 +11,9 @@ namespace CMcG.CodeAlignment
         Business.Options m_options       = new Business.Options();
         Point            m_keyGrabOffset = new Point(10, -50);
 
-        public IDocument Document { get; set; }
-        public IntPtr    Handle   { get; set; }
+        public IUIManager UIManager { get; set; }
+        public IDocument  Document  { get; set; }
+        public IntPtr     Handle    { get; set; }
 
         public Point KeyGrabOffset
         {
@@ -34,7 +36,7 @@ namespace CMcG.CodeAlignment
 
         public void AlignByDialog(bool alignFromCaret = false)
         {
-            var result = ShowAlignDialog(alignFromCaret);
+            var result = UIManager.PromptForAlignment(alignFromCaret);
             if (result != null)
                 AlignBy(result.Delimiter, result.AlignFromCaret, useRegex:result.UseRegex);
         }
@@ -63,20 +65,15 @@ namespace CMcG.CodeAlignment
             return alignment;
         }
 
-        public FormCodeAlignment ShowAlignDialog(bool alignFromCaret)
-        {
-            var form = new FormCodeAlignment { AlignFromCaret = alignFromCaret };
-            return form.ShowDialog() == System.Windows.Forms.DialogResult.Cancel ? null : form;
-        }
-
         public void AlignByKey()
         {
             var viewModel = new AlignmentViewModel(this, CreateAlignment());
+            var bounds    = new LocationCalculator().CalculateBounds(Handle, KeyGrabOffset);
 
-            using (var form = new FormKeyGrabber { ViewModel = viewModel })
+            using (var grabber = UIManager.GetKeyGrabber(viewModel))
             {
-                form.SetLocation(Handle, KeyGrabOffset);
-                form.ShowDialog();
+                grabber.SetBounds(bounds);
+                grabber.Display();
             }
         }
     }

@@ -46,7 +46,17 @@ namespace CMcG.CodeAlignment
 
         static void SetCommand(int index, string name, Action<AlignFunctions> action, ShortcutKey shortcut = new ShortcutKey())
         {
-            PluginBase.SetCommand(index, name, () => action.Invoke(new AlignFunctions { Document = new Document(), Handle = PluginBase.nppData._nppHandle }), shortcut);
+            PluginBase.SetCommand(index, name, () => action.Invoke(GetFunctions()), shortcut);
+        }
+
+        static AlignFunctions GetFunctions()
+        {
+            return new AlignFunctions
+            {
+                UIManager = new UIManager(),
+                Document  = new Document(),
+                Handle    = PluginBase.nppData._nppHandle
+            };
         }
 
         internal static void SetToolBarIcon()

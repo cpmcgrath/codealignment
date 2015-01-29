@@ -96,6 +96,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CodeAlignment.Common.WinForms\CodeAlignment.Common.WinForms.csproj">
+      <Project>{f343e003-1a69-41fe-a014-76bb53034914}</Project>
+      <Name>CodeAlignment.Common.WinForms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CodeAlignment.Common\CodeAlignment.Common.csproj">
       <Project>{F33D2D88-A998-4F74-AB41-AB81878BB296}</Project>
       <Name>CodeAlignment.Common</Name>

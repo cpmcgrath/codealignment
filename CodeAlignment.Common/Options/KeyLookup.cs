@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Windows.Forms;
 using CMcG.CodeAlignment.Business;
 
 namespace CMcG.CodeAlignment.Options

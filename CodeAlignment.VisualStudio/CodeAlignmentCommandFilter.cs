@@ -27,6 +27,7 @@ namespace CMcG.CodeAlignment
         {
             var functions = new AlignFunctions
             {
+                UIManager     = new UIManager(),
                 Document      = new Document(m_view),
                 Handle        = m_textViewAdapter.GetWindowHandle(),
                 KeyGrabOffset = new System.Drawing.Point(10, -35)

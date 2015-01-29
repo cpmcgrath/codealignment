@@ -25,8 +25,9 @@ namespace CMcG.CodeAlignment
 
         protected override void OnViewChanged()
         {
-            var editor           = View != null && View.ViewMode != ViewMode.Design ? View.CodeEditor : null;
-            m_functions.Document = editor != null ? new Implementations.Document(editor) : null;
+            var editor            = View != null && View.ViewMode != ViewMode.Design ? View.CodeEditor : null;
+            m_functions.Document  = editor != null ? new Implementations.Document(editor) : null;
+            m_functions.UIManager = new UIManager()
 
             if (View != null)
                 m_functions.Handle = new WindowInteropHelper(CurrentWindow).Handle;

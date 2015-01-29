@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F343E003-1A69-41FE-A014-76BB53034914}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMcG.CodeAlignment</RootNamespace>
+    <AssemblyName>CodeAlignment.Common.WinForms</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\CodeAlignment.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseUserControl.Designer.cs">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListControl.Designer.cs">
+      <DependentUpon>ListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCodeAlignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCodeAlignment.Designer.cs">
+      <DependentUpon>FormCodeAlignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKeyGrabber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKeyGrabber.Designer.cs">
+      <DependentUpon>FormKeyGrabber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\FormOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\FormOptions.Designer.cs">
+      <DependentUpon>FormOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\ScreenGeneral.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\ScreenGeneral.Designer.cs">
+      <DependentUpon>ScreenGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\ScreenSelectors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\ScreenSelectors.Designer.cs">
+      <DependentUpon>ScreenSelectors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\ScreenShortcuts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\ScreenShortcuts.Designer.cs">
+      <DependentUpon>ScreenShortcuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\ShortcutLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\ShortcutLine.Designer.cs">
+      <DependentUpon>ShortcutLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UIManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCodeAlignment.resx">
+      <DependentUpon>FormCodeAlignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKeyGrabber.resx">
+      <DependentUpon>FormKeyGrabber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\FormOptions.resx">
+      <DependentUpon>FormOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\ScreenGeneral.resx">
+      <DependentUpon>ScreenGeneral.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\ScreenSelectors.resx">
+      <DependentUpon>ScreenSelectors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\ScreenShortcuts.resx">
+      <DependentUpon>ScreenShortcuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\ShortcutLine.resx">
+      <DependentUpon>ShortcutLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeAlignment.Common\CodeAlignment.Common.csproj">
+      <Project>{f33d2d88-a998-4f74-ab41-ab81878bb296}</Project>
+      <Name>CodeAlignment.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\CodeAlignment.snk">
+      <Link>Properties\CodeAlignment.snk</Link>
+    </None>
+    <None Include="Resources\CodeAlignmentBanner96x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CodeAlignmentIconBanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Donate.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Options.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

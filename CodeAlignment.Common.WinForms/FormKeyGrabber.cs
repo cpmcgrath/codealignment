@@ -3,11 +3,10 @@ using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 using CMcG.CodeAlignment.Business;
-using System.Runtime.InteropServices;
 
 namespace CMcG.CodeAlignment
 {
-    public partial class FormKeyGrabber : Controls.BaseForm
+    public partial class FormKeyGrabber : Controls.BaseForm, Interactions.IKeyGrabber
     {
         bool m_isChained;
         public AlignmentViewModel ViewModel { get; set; }
@@ -75,24 +74,15 @@ namespace CMcG.CodeAlignment
             base.WndProc(ref m);
         }
 
-        public void SetLocation(IntPtr handle, Point offset)
+        public void Display()
         {
-            RECT rect;
-            GetWindowRect(handle, out rect);
-            Width    = rect.Right - rect.Left - 20;
-            Location = new Point(rect.Left + offset.X, rect.Bottom - Height + offset.Y);
+            ShowDialog();
         }
 
-        [DllImport("user32.dll")]
-        static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
-
-        [StructLayout(LayoutKind.Sequential)]
-        struct RECT
+        public void SetBounds(Rectangle bounds)
         {
-            public int Left   { get; set; }
-            public int Top    { get; set; }
-            public int Right  { get; set; }
-            public int Bottom { get; set; }
+            Location = bounds.Location;
+            Size     = bounds.Size;
         }
     }
 }

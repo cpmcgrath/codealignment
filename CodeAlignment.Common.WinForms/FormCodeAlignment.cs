@@ -5,7 +5,7 @@ using CMcG.CodeAlignment.Properties;
 
 namespace CMcG.CodeAlignment
 {
-    public partial class FormCodeAlignment : Controls.BaseForm
+    public partial class FormCodeAlignment : Controls.BaseForm, Interactions.IAlignmentDetails
     {
         public FormCodeAlignment()
         {
@@ -58,7 +58,7 @@ namespace CMcG.CodeAlignment
 
         public bool AlignFromCaret
         {
-            get { return chkAlignFromCaret.Checked; }
+            get { return chkAlignFromCaret.Checked || (Control.ModifierKeys == Keys.Shift); }
             set { chkAlignFromCaret.Checked = value; }
         }
 
