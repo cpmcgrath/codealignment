@@ -3,7 +3,7 @@
   <Identifier Id="2adcbb11-89c4-451e-97f2-14049154ccad">
     <Name>Code alignment</Name>
     <Author>Chris McGrath</Author>
-    <Version>12.0</Version>
+    <Version>12.1</Version>
     <Description xml:space="preserve">Code alignment helps you present your code beautifully, enhancing clarity and readability.</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>http://www.codealignment.com</MoreInfoUrl>
