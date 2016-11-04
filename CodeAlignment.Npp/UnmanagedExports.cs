@@ -14,23 +14,22 @@ namespace CMcG.CodeAlignment
             AppDomain.CurrentDomain.AssemblyResolve += OnCurrentDomainAssemblyResolve;
         }
 
+        static string Location => Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
         static Assembly OnCurrentDomainAssemblyResolve(object sender, ResolveEventArgs args)
         {
             if (args.Name.Contains("CodeAlignment.Common"))
             {
-                var name     = args.Name.Substring(0, args.Name.IndexOf(','));
-                var location = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                return Assembly.LoadFile(Path.Combine(location, @"CodeAlignment\" + name + ".dll"));
+                var name = args.Name.Substring(0, args.Name.IndexOf(','));
+                if (!name.EndsWith(".resources"))
+                    return Assembly.LoadFile(Path.Combine(Location, $@"CodeAlignment\{name}.dll"));
             }
 
             return null;
         }
 
         [DllExport(CallingConvention=CallingConvention.Cdecl)]
-        static bool isUnicode()
-        {
-            return true;
-        }
+        static bool isUnicode() => true;
 
         [DllExport(CallingConvention = CallingConvention.Cdecl)]
         static void setInfo(NppData notepadPlusData)
@@ -47,10 +46,7 @@ namespace CMcG.CodeAlignment
         }
 
         [DllExport(CallingConvention = CallingConvention.Cdecl)]
-        static uint messageProc(uint Message, IntPtr wParam, IntPtr lParam)
-        {
-            return 1;
-        }
+        static uint messageProc(uint Message, IntPtr wParam, IntPtr lParam) => 1;
 
         static IntPtr _ptrPluginName = IntPtr.Zero;
         [DllExport(CallingConvention = CallingConvention.Cdecl)]
