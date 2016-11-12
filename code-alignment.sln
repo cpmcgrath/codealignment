@@ -1,25 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.25909.2
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignment.VisualStudio", "CodeAlignment.VisualStudio\CodeAlignment.VisualStudio.csproj", "{591B6F7C-1E86-4828-9F88-6A55556AA3A9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignment.Npp", "CodeAlignment.Npp\CodeAlignment.Npp.csproj", "{E56F6E12-089C-40ED-BCFD-923E5FA121A1}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{86B3F4F3-B993-42A8-AA6A-D564F377B6CA}"
 	ProjectSection(SolutionItems) = preProject
 		CodeAlignment.ico = CodeAlignment.ico
 		CodeAlignment.snk = CodeAlignment.snk
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{3C9EEF60-DF71-4654-A77C-0B7E3621C2E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignment.VisualStudio", "CodeAlignment.VisualStudio\CodeAlignment.VisualStudio.csproj", "{591B6F7C-1E86-4828-9F88-6A55556AA3A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignment.Npp", "CodeAlignment.Npp\CodeAlignment.Npp.csproj", "{E56F6E12-089C-40ED-BCFD-923E5FA121A1}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignment.Common", "CodeAlignment.Common\CodeAlignment.Common.csproj", "{F33D2D88-A998-4F74-AB41-AB81878BB296}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignmentGenericCallbacks", "CodeAlignmentGenericCallbacks\CodeAlignmentGenericCallbacks.csproj", "{67A65FCD-FE70-4269-9D46-E4711DE513D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignment.Common.Test", "Test\CodeAlignment.Common.Test\CodeAlignment.Common.Test.csproj", "{F54B4D8A-EA40-434E-8A6B-8F38B61C023D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{3C9EEF60-DF71-4654-A77C-0B7E3621C2E2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAlignment.Common.WinForms", "CodeAlignment.Common.WinForms\CodeAlignment.Common.WinForms.csproj", "{F343E003-1A69-41FE-A014-76BB53034914}"
 EndProject
