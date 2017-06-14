@@ -66,7 +66,7 @@ namespace CMcG.CodeAlignment
         protected override void WndProc(ref Message m)
         {
             if (m_isChained && m.Msg == KEY_UP
-            && (m.LParam.ToInt32() == LEFT_CONTROL || m.LParam.ToInt32() == RIGHT_CONTROL))
+            && (m.LParam.ToInt64() == LEFT_CONTROL || m.LParam.ToInt64() == RIGHT_CONTROL))
             {
                 Close();
             }
