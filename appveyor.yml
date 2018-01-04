@@ -1,0 +1,80 @@
+version: 13.1.{build}
+image: Visual Studio 2017
+
+
+environment:
+  matrix:
+    - PlatformToolset: VS15
+    - PlatformToolset: VS17
+
+platform:
+    - x64
+    - Any CPU
+
+configuration:
+    - Release
+    - Debug
+
+install:
+    - if "%platform%"=="x64" set archi=amd64
+    - if "%platform%"=="x64" set platform_input=x64
+
+    - if "%platform%"=="Any CPU" set archi=x86
+    - if "%platform%"=="Any CPU" set platform_input=Any CPU
+
+    - if "%PlatformToolset%"=="VS15" call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %archi%
+    - if "%PlatformToolset%"=="VS17" call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" %archi%
+    - nuget restore "%APPVEYOR_BUILD_FOLDER%"\CodeAlignment.VisualStudio\packages.config -PackagesDirectory "%APPVEYOR_BUILD_FOLDER%"\packages
+    - nuget restore "%APPVEYOR_BUILD_FOLDER%"\Test\CodeAlignment.Common.Test\packages.config -PackagesDirectory "%APPVEYOR_BUILD_FOLDER%"\packages
+
+build_script:
+    - cd "%APPVEYOR_BUILD_FOLDER%"
+    - msbuild code-alignment.sln /m /t:CodeAlignment_Npp /p:configuration="%configuration%" /p:platform="%platform_input%" /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+after_build:
+    - cd "%APPVEYOR_BUILD_FOLDER%"
+    - ps: >-
+
+        if ($env:PLATFORM_INPUT -eq "x64" -and $env:CONFIGURATION -eq "Release") {
+            Push-AppveyorArtifact "CodeAlignment.Npp\bin\x64\$env:CONFIGURATION\CodeAlignmentNpp.dll" -FileName CodeAlignmentNpp.dll
+            Push-AppveyorArtifact "CodeAlignment.Npp\bin\x64\$env:CONFIGURATION\CodeAlignment\CodeAlignment.Common.dll" -FileName CodeAlignment.Common.dll
+            Push-AppveyorArtifact "CodeAlignment.Npp\bin\x64\$env:CONFIGURATION\CodeAlignment\CodeAlignment.Common.WinForms.dll" -FileName CodeAlignment.Common.WinForms.dll
+        }
+
+        if ($env:PLATFORM_INPUT -eq "Any CPU" -and $env:CONFIGURATION -eq "Release") {
+            Push-AppveyorArtifact "CodeAlignment.Npp\bin\$env:CONFIGURATION\CodeAlignmentNpp.dll" -FileName CodeAlignmentNpp.dll
+            Push-AppveyorArtifact "CodeAlignment.Npp\bin\$env:CONFIGURATION\CodeAlignment\CodeAlignment.Common.dll" -FileName CodeAlignment.Common.dll
+            Push-AppveyorArtifact "CodeAlignment.Npp\bin\$env:CONFIGURATION\CodeAlignment\CodeAlignment.Common.WinForms.dll" -FileName CodeAlignment.Common.WinForms.dll
+        }
+
+        if ($($env:APPVEYOR_REPO_TAG) -eq "true" -and $env:CONFIGURATION -eq "Release" -and $env:PLATFORMTOOLSET -eq "VS17") {
+            if($env:PLATFORM_INPUT -eq "x64"){
+            $ZipFileName = "CodeAlignmentNpp_$($env:APPVEYOR_REPO_TAG_NAME)_x64.zip"
+            Remove-Item CodeAlignment.Npp\bin\x64\$env:CONFIGURATION\*.exp
+            Remove-Item CodeAlignment.Npp\bin\x64\$env:CONFIGURATION\*.lib
+            7z a $ZipFileName CodeAlignment.Npp\bin\x64\$env:CONFIGURATION\*
+            }
+            if($env:PLATFORM_INPUT -eq "Any CPU"){
+            $ZipFileName = "CodeAlignmentNpp_$($env:APPVEYOR_REPO_TAG_NAME)_x86.zip"
+            Remove-Item CodeAlignment.Npp\bin\$env:CONFIGURATION\*.exp
+            Remove-Item CodeAlignment.Npp\bin\$env:CONFIGURATION\*.lib
+            7z a $ZipFileName CodeAlignment.Npp\bin\$env:CONFIGURATION\*
+            }
+        }
+
+artifacts:
+  - path: CodeAlignmentNpp_*.zip
+    name: releases
+
+deploy:
+    provider: GitHub
+    auth_token:
+        secure: !!TODO, see https://www.appveyor.com/docs/deployment/github/#provider-settings!!
+    artifact: releases
+    draft: false
+    prerelease: false
+    force_update: true
+    on:
+        appveyor_repo_tag: true
+        PlatformToolset: VS17
+        configuration: Release
