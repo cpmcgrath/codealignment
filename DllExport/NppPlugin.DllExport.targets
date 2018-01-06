@@ -19,11 +19,5 @@
                    FrameworkPath="$(TargetedFrameworkDir);$(TargetFrameworkDirectory)"
                    LibToolDllPath="$(DevEnvDir)"
                    SdkPath="$(SDK40ToolsPath)"/>
- 
-    <Copy 
-        SourceFiles="$(TargetPath)" 
-        DestinationFolder="C:\Program Files (x86)\Notepad++\plugins\" 
-        Condition="Exists('C:\Program Files (x86)\Notepad++\plugins\')"
-        ContinueOnError="false" />
   </Target>
 </Project>
