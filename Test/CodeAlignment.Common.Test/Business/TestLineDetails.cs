@@ -8,7 +8,7 @@ namespace CMcG.CodeAlignment.Test.Business
 {
     public class TestLineDetails
     {
-        [Fact]
+        //[Fact]
         public void GetPositionToAlignTo()
         {
             throw new NotImplementedException();

@@ -8,7 +8,7 @@ namespace CMcG.CodeAlignment.Test.Business.Selectors
 {
     public class TestGeneralScopeSelector
     {
-        [Fact]
+        //[Fact]
         public void GetLinesToAlign()
         {
             throw new NotImplementedException();
