@@ -25,7 +25,7 @@ namespace CMcG.CodeAlignment.Test.Business
 
             var xml        = KeyShortcut.Serialize(new[] { shortcut });
             var cloneArray = KeyShortcut.Get(xml);
-            Assert.Equal(1, cloneArray.Length);
+            Assert.Single(cloneArray);
 
             var clone = cloneArray[0];
 

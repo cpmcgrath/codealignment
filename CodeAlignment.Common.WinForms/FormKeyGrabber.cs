@@ -59,25 +59,28 @@ namespace CMcG.CodeAlignment
             }
         }
 
-        const int KEY_UP        = 257,
-                  LEFT_CONTROL  = -1071841279,
-                  RIGHT_CONTROL = -1055064063;
+        const int  KEY_UP        = 257;
+        const long LEFT_CONTROL  = 3223126017,
+                   RIGHT_CONTROL = 3239903233;
 
         protected override void WndProc(ref Message m)
         {
-            if (m_isChained && m.Msg == KEY_UP
-            && (m.LParam.ToInt32() == LEFT_CONTROL || m.LParam.ToInt32() == RIGHT_CONTROL))
+            if (m_isChained && m.Msg == KEY_UP)
             {
-                Close();
+                long value = m.LParam.ToInt64();
+                if (value < 0)
+                    value = ToUnsigned(value);
+
+                if (value == LEFT_CONTROL || value == RIGHT_CONTROL)
+                    Close();
             }
 
             base.WndProc(ref m);
         }
 
-        public void Display()
-        {
-            ShowDialog();
-        }
+        long ToUnsigned(long intValue) => intValue & 0xffffffffL;
+
+        public void Display() => ShowDialog();
 
         public void SetBounds(Rectangle bounds)
         {

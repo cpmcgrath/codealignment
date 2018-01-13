@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="2adcbb11-89c4-451e-97f2-14049154ccad" Version="13.1" Language="en-US" Publisher="Chris McGrath" />
+    <Identity Id="2adcbb11-89c4-451e-97f2-14049154ccad" Version="1.0.0.0" Language="en-US" Publisher="Chris McGrath" />
     <DisplayName>Code alignment</DisplayName>
     <Description xml:space="preserve">Code alignment helps you present your code beautifully, enhancing clarity and readability.</Description>
     <MoreInfo>http://www.codealignment.com</MoreInfo>

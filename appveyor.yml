@@ -1,0 +1,55 @@
+version: 14.0.{build}.0
+image: Visual Studio 2017
+
+platform:
+    - All
+
+configuration:
+    - Release
+
+environment:
+  LOGDLL: '"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"'
+
+install:
+    - cd "%APPVEYOR_BUILD_FOLDER%"
+    - nuget restore CodeAlignment.VisualStudio\packages.config     -PackagesDirectory packages
+    - nuget restore Test\CodeAlignment.Common.Test\packages.config -PackagesDirectory packages
+
+build_script:
+    - cd "%APPVEYOR_BUILD_FOLDER%"
+    - ps: >-
+        . .\buildhelpers.ps1
+
+        if ($true)
+        {
+            UpdateVersion   CodeAlignment.Common          $env:appveyor_build_version
+            UpdateVersion   CodeAlignment.Common.WinForms $env:appveyor_build_version
+            UpdateVersion   CodeAlignment.Npp             $env:appveyor_build_version
+            UpdateVersion   CodeAlignmentGenericCallbacks $env:appveyor_build_version
+            UpdateVsVersion CodeAlignment.VisualStudio    $env:appveyor_build_version
+        }
+    - msbuild code-alignment.sln /m /p:configuration="Release" /p:platform="Any CPU" /logger:%LOGDLL%
+    - msbuild code-alignment.sln /m /p:configuration="Release" /p:platform="x64"     /logger:%LOGDLL%
+
+after_build:
+    - cd "%APPVEYOR_BUILD_FOLDER%"
+    - ps: >-
+        . .\buildhelpers.ps1
+
+        if ($true)
+        {
+            CollectNpp $false
+            CollectNpp $true
+            Push-AppveyorArtifact "CodeAlignment.VisualStudio\bin\$env:CONFIGURATION\CodeAlignment.vsix" -FileName CodeAlignment.vsix
+        }
+
+deploy:
+    provider: GitHub
+    auth_token:
+        secure: TA1/2G21wUBPSWRbmBul7xGvE3YpX8n8AEooMuwkiqhxGhD2bLJ0Y//rS7+qwIN1
+    draft: true
+    prerelease: false
+    force_update: true
+    on:
+        branch: release
+        appveyor_repo_tag: true
