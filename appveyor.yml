@@ -1,4 +1,4 @@
-version: 14.1.{build}.0
+version: 15.1.{build}.0
 image: Visual Studio 2017
 
 platform:
@@ -12,8 +12,7 @@ environment:
 
 install:
     - cd "%APPVEYOR_BUILD_FOLDER%"
-    - nuget restore CodeAlignment.VisualStudio\packages.config     -PackagesDirectory packages
-    - nuget restore Test\CodeAlignment.Common.Test\packages.config -PackagesDirectory packages
+    - nuget restore
 
 build_script:
     - cd "%APPVEYOR_BUILD_FOLDER%"

@@ -14,6 +14,7 @@ namespace CMcG.CodeAlignment
 
         public int Exec(ref Guid cmdGroup, uint cmdId, uint options, IntPtr inArg, IntPtr outArg)
         {
+            Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             if (cmdGroup != CommandGuid)
                 return Next.Exec(ref cmdGroup, cmdId, options, inArg, outArg);
 
@@ -23,6 +24,7 @@ namespace CMcG.CodeAlignment
 
         public int QueryStatus(ref Guid cmdGroup, uint cmdCount, OLECMD[] cmds, IntPtr cmdText)
         {
+            Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             if (cmdGroup != CommandGuid)
                 return Next.QueryStatus(ref cmdGroup, cmdCount, cmds, cmdText);
 
@@ -38,11 +40,7 @@ namespace CMcG.CodeAlignment
                                      :  OLECMDF.OLECMDF_SUPPORTED;
         }
 
-        public virtual bool CanExecute(uint cmdId)
-        {
-            return true;
-        }
-
+        public virtual bool CanExecute(uint cmdId) => true;
         public abstract void Execute(uint cmdId);
 
         public static void Register(IVsTextView textViewAdapter, CommandFilter filter)

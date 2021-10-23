@@ -18,10 +18,7 @@ namespace CMcG.CodeAlignment
             m_textViewAdapter = textViewAdapter;
         }
 
-        protected override Guid CommandGuid
-        {
-            get { return GuidList.CmdSetGuid; }
-        }
+        protected override Guid CommandGuid => GuidList.CmdSetGuid;
 
         public override void Execute(uint cmdId)
         {
