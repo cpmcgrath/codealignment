@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 
 namespace CMcG.CodeAlignment
 {
-    [PackageRegistration(UseManagedResourcesOnly = true)]
+    [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [InstalledProductRegistration("#110", "#112", "1.0.0.0", IconResourceID = 400)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(GuidList.PackageGuidStr)]
-    public sealed class CodeAlignmentPackage : Package
+    public sealed class CodeAlignmentPackage : AsyncPackage
     {
     }
 }
