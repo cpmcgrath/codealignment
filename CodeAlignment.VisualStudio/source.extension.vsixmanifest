@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="2adcbb11-89c4-451e-97f2-14049154ccad" Version="1.0.0.0" Language="en-US" Publisher="Chris McGrath" />
-    <DisplayName>Code alignment</DisplayName>
+    <Identity Id="code-alignment-2019-2adcbb11-89c4-451e-97f2-14049154ccad" Version="1.0.0.0" Language="en-US" Publisher="Chris McGrath" />
+    <DisplayName>Code alignment (VS2012-2019)</DisplayName>
     <Description xml:space="preserve">Code alignment helps you present your code beautifully, enhancing clarity and readability.</Description>
     <MoreInfo>http://www.codealignment.com</MoreInfo>
     <License>license.txt</License>
@@ -11,11 +11,11 @@
     <Tags>align, alignment, formatting</Tags>
   </Metadata>
   <Installation>
-    <InstallationTarget Version="[11.0,)" Id="Microsoft.VisualStudio.Community" />
-    <InstallationTarget Version="[11.0,)" Id="Microsoft.VisualStudio.Enterprise" />
-    <InstallationTarget Version="[11.0,)" Id="Microsoft.VisualStudio.Pro" />
-    <InstallationTarget Version="[11.0,)" Id="Microsoft.VisualStudio.Premium" />
-    <InstallationTarget Version="[11.0,)" Id="Microsoft.VisualStudio.Ultimate" />
+    <InstallationTarget Version="[11.0,17.0)" Id="Microsoft.VisualStudio.Community" />
+    <InstallationTarget Version="[11.0,17.0)" Id="Microsoft.VisualStudio.Enterprise" />
+    <InstallationTarget Version="[11.0,17.0)" Id="Microsoft.VisualStudio.Pro" />
+    <InstallationTarget Version="[11.0,17.0)" Id="Microsoft.VisualStudio.Premium" />
+    <InstallationTarget Version="[11.0,17.0)" Id="Microsoft.VisualStudio.Ultimate" />
   </Installation>
   <Dependencies>
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />

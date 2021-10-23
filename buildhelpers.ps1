@@ -20,8 +20,8 @@ function UpdateVsVersion($project, $version)
             "[InstalledProductRegistration(`"#110`", `"#112`", `"$version`", IconResourceID = 400)]"
         
     Replace "./$project/source.extension.vsixmanifest" `
-            "Id=`"2adcbb11-89c4-451e-97f2-14049154ccad`" Version=`"[^`"]+`"" `
-            "Id=`"2adcbb11-89c4-451e-97f2-14049154ccad`" Version=`"$version`""
+            "2adcbb11-89c4-451e-97f2-14049154ccad`" Version=`"[^`"]+`"" `
+            "2adcbb11-89c4-451e-97f2-14049154ccad`" Version=`"$version`""
 }
 
 
